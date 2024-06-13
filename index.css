@@ -481,7 +481,6 @@ font-size: 45.56px;
 font-weight: 500;
 line-height: 47.6px;
 text-align: center;
-width: 457px;
     }
     .sher > p{
         font-family: Segoe UI;
@@ -745,16 +744,16 @@ footer button{
     align-items:center;
 }
 @media (max-width: 850px) {
-* {
-}
   header {
 
       margin:0;
     height: auto;
-    top: 10px;
+    top: 0%;
       width:100%;
   }
   #overlay{
+      position:absolute;
+      top:0%;
       width:100%;
   border-radius: 0;
   padding:0;
@@ -838,7 +837,7 @@ width:200px;
   .in2 {
     font-size: 100%;
     line-height: 22px;
-    width: 100%;
+    width: 97%;
     margin: 20px 0 50px;
   }
 
@@ -934,7 +933,11 @@ height: 411px;
     width: 100%;
   }
 
-  .sher > h2, .sher > p {
+  .sher > h2 {
+            font-size:300%;
+  }
+  .sher p{
+      width:96%;
   }
   .sher{
 
@@ -1001,10 +1004,11 @@ margin-top:700px;
   }
 
   .listf {
+      flex-wrap:nowrap;
   }
 
-  .listf li {
-      font-size:80%;
+  .listf li a{
+      font-size:90%;
   }
 
   footer button{
