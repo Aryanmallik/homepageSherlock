@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 html {
-  overflow-x: hidden;
 }
 * {
+    overflow-x: clip;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  flex-wrap:wrap;
 }
-
 header {
   position: relative;
-  width: 98%;
+  width: 100%;
   height: 96px;
   top: 22px;
   display: flex;
@@ -20,7 +20,6 @@ header {
 
 #overlay {
   width: 98%;
-  max-width: 100%;
   height: 96px;
   border-radius: 0 0 30px 30px;
   background: #060b27d9;
@@ -66,20 +65,20 @@ header {
 
 #VerticalBorder {
   position: absolute;
-  width: 197.19px;
+  width:min(30%,197px);
   height: 48px;
   right: 20px;
   border-left: 1px solid #ffffff33;
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding-left: 10px;
 }
 
 #VerticalBorder #Link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 170.19px;
+  width: 90%;
   height: 48px;
   border-radius: 24px;
   background: linear-gradient(79.73deg, #611ce0 0%, #0e9aed 99.52%);
@@ -88,7 +87,7 @@ header {
 
 #VerticalBorder a {
   font-family: "Inter";
-  font-size: 15px;
+  font-size: 100%;
   font-weight: 700;
   line-height: 16px;
   text-align: center;
@@ -97,7 +96,7 @@ header {
 }
 #hero {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 653px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     linear-gradient(79.73deg, #611ce0 0%, #0e9aed 99.52%);
@@ -109,25 +108,29 @@ header {
 }
 
 #img {
-  position: absolute;
-  width: 50%;
-  max-width: 358px;
-  height: auto;
-  z-index: 2;
-  bottom: -10%;
-  right: 0%;
+    position: absolute;
+    width: 50%;
+    max-width: 358px;
+    height: auto;
+    z-index: 2;
+    bottom: -10%;
+    right: 0%;
 }
 #PlatformLogo {
   position: absolute;
   bottom: 1%;
   right: 6%;
+    width: 50%;
+    max-width: 358px;
+    height: auto;
 }
 #arrow {
   position: absolute;
-  width: 341px;
-  height: 338px;
   bottom: 3%;
   right: -1%;
+    width: 50%;
+    max-width: 358px;
+    height: auto;
 }
 
 #text {
@@ -172,7 +175,6 @@ header {
 }
 .insights {
   margin-top: 160px;
-  height: 40rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -203,51 +205,57 @@ header {
   color: #131313;
   margin: 30px 0px 100px 0px;
 }
-.column {
-  display: flex;
-  gap: 100px;
-}
 .hin {
-  font-size: 22px;
+  font-size: 1.5vw;
   font-weight: 700;
+  width: 100%;
 }
 .p1 {
   font-family: Montserrat;
-  font-size: 18px;
+  font-size: 1vw;
   font-weight: 200;
-  line-height: 26px;
-  width: 301.21px;
+  width: 100%;
   height: 104px;
 }
 .p2 {
   font-family: Montserrat;
-  font-size: 18px;
+  font-size: 1vw;
   font-weight: 700;
-  width: 301.21px;
+  width: 100%;
 height: 14px;
 top: 465.83px;
 
 }
+.column {
+  display: flex;
+  gap: 80px;
+  justify-content:center;
+  height:35vw;
+}
+
 .picitem {
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 372.95px;
-  height: 545.97px;
+  width: 20%;
+  height: 100%;
   border-radius: 4px;
   border: 1px solid #e7e7e7;
   box-shadow: 0px 5px 20px 0px #75787a14;
   justify-content: space-between;
   padding: 20px;
-  align-content:center;
-  flex-wrap:wrap;
+  align-content: center;
+  flex-wrap:nowrap;
 }
+
 .pic {
-    width: 200px;
-height: 200px;
-margin-left:auto;
-margin-right:auto;
+  width:auto; 
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+
 .yus{
     margin-top:200px;
     display:flex;
@@ -271,7 +279,6 @@ font-size: 20px;
 font-weight: 400;
 line-height: 26px;
 text-align: center;
-width: 1000.57px;
 height: 46px;
 }
 .svge{
@@ -355,7 +362,6 @@ height: 242px;
 }
 .col{
     flex-direction:column;
-    width: 1026.75px;
 height: 138px;
 
 }
@@ -368,7 +374,6 @@ font-size: 52px;
 font-weight: 400;
 line-height: 61px;
 text-align: left;
-width: 735.17px;
 }
 .out button{
   display: flex;
@@ -389,6 +394,7 @@ border:0;
 .blur2{
     position:absolute;
     z-index:-2;
+    width:100%;
 margin-top:-300px;
 }
 .rect1{
@@ -483,19 +489,18 @@ font-size: 17.72px;
 font-weight: 400;
 line-height: 30.6px;
 text-align: center;
-width: 457px;
+width: 60%;
 height: 96px;
 top: 29px;
 left: 341px;
 gap: 0px;
 opacity: 0px;
-width: 925px;
     margin-top:40px;
     }
 
     .enclose{
         border-bottom: 1px solid #E8E8E8;
-        width: 1140px;
+        width: 70%;
         display:flex;
         justify-content:center;
     }
@@ -574,9 +579,9 @@ height: 409.98px;
 border-radius: 16px;
 }
 .car{
-    width: 582px;
+    width: 30%;
 height: 380px;
-right: -4%;
+right: 0%;
 margin-top:500px;
 position:absolute;
 z-index:-1;
@@ -594,7 +599,7 @@ font-weight: 500;
 }
 .group{
     display:flex;
-    width:100vw;
+    width:100%;
     justify-content:space-evenly;
 }
 .group img{
@@ -611,6 +616,7 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 z-index:-3;
+overflow-x:hidden;
 }
 .demo button{
   padding: 1rem 2rem;
@@ -696,7 +702,7 @@ font-weight: 700;
 line-height: 40px;
 text-align: center;
 color: #FFFFFF;
-width: 1060.77px;
+width: 60%;
 height: 40px;
 }
 footer button{
@@ -739,3 +745,218 @@ footer button{
     gap:20px;
     align-items:center;
 }
+@media (max-width: 850px) {
+* {
+}
+  header {
+
+      margin:0;
+    height: auto;
+    top: 10px;
+      width:100%;
+  }
+  #overlay{
+      width:100%;
+  border-radius: 0;
+  padding:0;
+  }
+
+  #link img {
+      display:none;
+  }
+
+  #list {
+    margin: 0;
+  }
+
+  #list li {
+    margin: 2px 0;
+  }
+
+  #VerticalBorder {
+    height: auto;
+    width:20%;
+    margin-top: 10px;
+  }
+  #VerticalBorder a{
+      font-size:80%;
+  }
+
+  #hero {
+  box-sizing: unset;
+    height:100vh;
+  }
+
+  #img, #arrow {
+    width: 80%;
+    right: 10%;
+  }
+
+  #text {
+    top: 20%;
+    margin-left: 5%;
+  }
+
+  #t1, #t2 {
+    width: 90%;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  #t4 {
+    margin-top: 20px;
+  }
+
+  .insights {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .in1 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .in2 {
+    font-size: 18px;
+    line-height: 22px;
+    width: 100%;
+    margin: 20px 0 50px;
+  }
+
+  .column {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .picitem {
+    width: 90%;
+    height: auto;
+  }
+
+  .pic {
+    width: 100%;
+    height: auto;
+  }
+
+  .yus {
+    margin-top: 100px;
+  }
+
+  #text1 {
+    font-size: 24px;
+  }
+
+  #text2 {
+    font-size: 18px;
+    width: 90%;
+  }
+
+  .rect {
+    flex-direction: column;
+  }
+
+  .left, .up, .ld, .rd {
+    width: 100%;
+    height: auto;
+  }
+
+  .core {
+    padding: 20px;
+  }
+
+  .out {
+    flex-direction: column;
+    justify-content:center;
+    align-items:flex-start;
+  }
+
+  .col > h1 {
+  }
+
+  .out button {
+    border-radius: 0;
+  }
+
+  .rect1 {
+    flex-direction: column;
+  }
+
+  .rect1 > img {
+    width: 100%;
+    height: auto;
+  }
+
+  .col2 {
+    width: 100%;
+  }
+
+  .element {
+    width: 100%;
+  }
+
+  .sher > h2, .sher > p {
+    width: 90%;
+  }
+
+  .enclose {
+    width: 50%;
+  }
+
+  .tab {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab li {
+    padding: 10px 20px;
+    width: 100%;
+  }
+  .mac{
+      display:none;
+  }
+
+  .faq {
+    width: 100%;
+  }
+
+  .outfaq {
+    flex-direction: column;
+  }
+
+  .outfaq img {
+    width: 100%;
+    height: auto;
+  }
+
+  .group {
+    flex-direction: column;
+  }
+
+  .group img {
+    width: 80px;
+    height: auto;
+  }
+
+  footer {
+    height: auto;
+    padding: 20px;
+  }
+
+  .p3 {
+    font-size: 24px;
+  }
+
+  .listf {
+    flex-direction: column;
+  }
+
+  .listf li {
+    margin: 10px 0;
+  }
+
+  .social {
+    flex-direction: column;
+  }
+}
+
