@@ -417,6 +417,7 @@ border-radius: 24px;
 
 .element {
     width: 432px;
+  box-shadow: 0px 5px 20px 0px #75787a14;
     height: 80px;
     padding: 26px 28px;
     border-radius: 24px;
