@@ -119,8 +119,8 @@ header {
 #PlatformLogo {
   position: absolute;
   bottom: 1%;
-  right: 6%;
-    width: 50%;
+  right: 8%;
+    width: 35%;
     max-width: 358px;
     height: auto;
 }
@@ -201,7 +201,6 @@ header {
   line-height: 26px;
   text-align: center;
   width: 900.16px;
-  height: 78px;
   color: #131313;
   margin: 30px 0px 100px 0px;
 }
@@ -294,6 +293,7 @@ width:75%;
     display:flex;
     margin-top:40px;
     gap:20px;
+    justify-content:center;
 }
 .left{
     width: 454.62px;
@@ -450,7 +450,6 @@ font-weight: 500;
 }
 
 .element:hover {
-    width: 432px;
 height: 145px;
 background: #F7F7F7;
     transition: 1s ease;
@@ -491,7 +490,6 @@ font-weight: 400;
 line-height: 30.6px;
 text-align: center;
 width: 60%;
-height: 96px;
 top: 29px;
 left: 341px;
 gap: 0px;
@@ -501,7 +499,7 @@ opacity: 0px;
 
     .enclose{
         border-bottom: 1px solid #E8E8E8;
-        width: 70%;
+        width: 75%;
         display:flex;
         justify-content:center;
     }
@@ -573,10 +571,10 @@ justify-content:space-between;
     align-items:center;
     gap:5vw;
     margin-top:80px;
+    flex-wrap:nowrap;
 }
 .outfaq img{
-    width: 588px;
-height: 409.98px;
+    width: 45%;
 border-radius: 16px;
 }
 .car{
@@ -593,7 +591,7 @@ background: linear-gradient(79.73deg, rgba(97, 28, 224, 0.5) 0%, rgba(14, 154, 2
     font-family: Inter;
 font-size: 30.13px;
 font-weight: 500;
-    margin-top:200px;
+    margin-top:300px;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -633,8 +631,8 @@ overflow-x:hidden;
 font-size: 45.38px;
 font-weight: 500;
 width: 467.87px;
-height: 172.8px;
 color:#fff;
+margin-bottom:40px;
 
 }
 .dot{
@@ -676,6 +674,7 @@ height: 358px;
 opacity: 0.7;
 }
 .mac{
+    overflow:visible;
     position:absolute;
     z-index:5;
     right:40%;
@@ -704,7 +703,6 @@ line-height: 40px;
 text-align: center;
 color: #FFFFFF;
 width: 60%;
-height: 40px;
 }
 footer button{
   padding: 1rem 2rem;
@@ -776,9 +774,13 @@ footer button{
 
   #VerticalBorder {
     height: auto;
-    width:20%;
+    width:30%;
     margin-top: 10px;
+    flex-shrink:1;
   }
+  #VerticalBorder #Link{
+width:200px;
+      }
   #VerticalBorder a{
       font-size:80%;
   }
@@ -788,17 +790,32 @@ footer button{
     height:100vh;
   }
 
-  #img, #arrow {
-    width: 80%;
-    right: 10%;
+  #img{
+    bottom:0%;
+    max-width: 90%;
   }
+  #arrow {
+    width:40%;
+    right: 0%;
+    bottom:14%;
+  }
+#PlatformLogo {
+    width: 50%;
+    right: 15%;
+    bottom:8%;
+}
 
   #text {
     top: 20%;
     margin-left: 5%;
   }
 
-  #t1, #t2 {
+  #t1{
+    width: 80%;
+    font-size: 29px;
+    line-height: 28px;
+  }
+  #t2 {
     width: 90%;
     font-size: 24px;
     line-height: 28px;
@@ -814,12 +831,12 @@ footer button{
   }
 
   .in1 {
-    font-size: 32px;
+    font-size: 200%;
     line-height: 36px;
   }
 
   .in2 {
-    font-size: 18px;
+    font-size: 100%;
     line-height: 22px;
     width: 100%;
     margin: 20px 0 50px;
@@ -828,16 +845,22 @@ footer button{
   .column {
     flex-direction: column;
     gap: 20px;
+    align-items:center;
+    height:auto;
   }
 
   .picitem {
-    width: 90%;
-    height: auto;
+    height: 600px;
+    width:400px;
+  }
+  .hin{
+      font-size:150%;
+  }
+  .p1,.p2{
+      font-size:120%;
   }
 
   .pic {
-    width: 100%;
-    height: auto;
   }
 
   .yus {
@@ -849,23 +872,41 @@ footer button{
   }
 
   #text2 {
-    font-size: 18px;
-    width: 90%;
+    font-size: 90%;
+    margin-bottom:20%;
   }
 
   .rect {
     flex-direction: column;
+    align-items:center;
   }
+.left{
+    width: 340px;
+height: 411px;
+}
 
-  .left, .up, .ld, .rd {
-    width: 100%;
-    height: auto;
-  }
+.up{
+    width:100%;
+}
+.sq{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    justify-content:center;
+}
+.down{
+    display:flex;
+    gap:20px;
+    width:100%;
+
+}
 
   .core {
     padding: 20px;
   }
-
+.blur2{
+    margin-top:200px;
+}
   .out {
     flex-direction: column;
     justify-content:center;
@@ -873,10 +914,7 @@ footer button{
   }
 
   .col > h1 {
-  }
-
-  .out button {
-    border-radius: 0;
+      font-size:200%;
   }
 
   .rect1 {
@@ -897,67 +935,93 @@ footer button{
   }
 
   .sher > h2, .sher > p {
-    width: 90%;
+  }
+  .sher{
+
+      text-align:center;
   }
 
   .enclose {
-    width: 50%;
+      margin-top:40px;
+    width: 100%;
   }
 
   .tab {
-    flex-direction: column;
-    align-items: center;
   }
 
   .tab li {
-    padding: 10px 20px;
-    width: 100%;
+    padding: 10px 15px;
   }
   .mac{
       display:none;
   }
 
   .faq {
-    width: 100%;
+    width: 90%;
   }
 
   .outfaq {
     flex-direction: column;
   }
+  .demo p{
+      width:100%;
+  }
 
+  .demo{
+      align-items:center;
+      text-align:center;
+  }
+  .litem{
+      right:0%;
+      left:0%;
+      font-size:80%;
+  }
+.car{
+margin-top:700px;
+}
   .outfaq img {
-    width: 100%;
+    width: 70%;
     height: auto;
   }
 
   .group {
     flex-direction: column;
+   align-items:center; 
   }
 
   .group img {
-    width: 80px;
+    width: 30%;
     height: auto;
   }
 
-  footer {
-    height: auto;
-    padding: 20px;
-  }
 
   .p3 {
     font-size: 24px;
+    width:100%
   }
 
   .listf {
-    flex-direction: column;
   }
 
   .listf li {
-    margin: 10px 0;
+      font-size:80%;
   }
 
-  .social {
+  footer button{
+      margin-top:40px;
+  }
+  footer{
+      margin-top: 80px;
     flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+    color: white;
+  }
+  .foot{
+      margin-top:40px;
+      flex-direction:column;
+      gap:10px;
+      font-size:80%;
   }
 }
 
