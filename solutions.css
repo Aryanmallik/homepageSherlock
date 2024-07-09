@@ -1,0 +1,387 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+html {
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+header {
+  position: relative;
+  width: 100%;
+  height: 96px;
+  top: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+#overlay {
+  width: 98%;
+  height: 96px;
+  border-radius: 0 0 30px 30px;
+  background: #060b27d9;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+#link img {
+  width: 123.48px;
+  height: 34.66px;
+  margin-left: 12px;
+}
+
+#list {
+  display: flex;
+  justify-content: space-between;
+  height: 96px;
+  list-style: none;
+  margin: 0 50px;
+}
+
+#list li {
+  display: flex;
+  align-items: center;
+}
+
+#list li a {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 2px 8px;
+}
+
+#list li a:hover {
+  color: #00aaff;
+}
+
+#VerticalBorder {
+  position: absolute;
+  width: min(30%, 197px);
+  height: 48px;
+  right: 20px;
+  border-left: 1px solid #ffffff33;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+#VerticalBorder #Link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 48px;
+  border-radius: 24px;
+  background: linear-gradient(79.73deg, #611ce0 0%, #0e9aed 99.52%);
+  text-decoration: none;
+}
+
+#VerticalBorder a {
+  font-family: "Inter";
+  font-size: 100%;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#Transform {
+  font-family: Inter;
+  font-size: 52px;
+  font-weight: 400;
+  letter-spacing: 0.9px;
+  margin: 50px;
+}
+#Change {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  width: 50%;
+  text-align:center;
+  margin-bottom: 50px;
+}
+#heading {
+  margin-top: 10%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.Link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  background: linear-gradient(79.73deg, #611ce0 0%, #0e9aed 99.52%);
+  text-decoration: none;
+  padding: 20px;
+}
+
+.Link a {
+  font-family: "Inter";
+  font-size: 100%;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+}
+.car {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  position: relative;
+}
+
+.item {
+  width: 250px;
+  height: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: width 0.7s ease-in-out;
+  position: relative;
+  flex-shrink: 0;
+}
+.item p {
+  position: absolute;
+  z-index: 2;
+  bottom: 8%;
+  left: 4%;
+  color: white;
+  width: 75%;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 800;
+}
+.item img {
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  border-radius: 15px;
+}
+
+.item div {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.item:hover {
+  width: 759px;
+  z-index: 1;
+}
+
+.item:hover img {
+  height: 100%;
+  width: auto;
+}
+
+#help {
+  margin-top: 100px;
+}
+
+#font {
+  margin-left: 60px;
+}
+
+#font p {
+  font-family: Inter;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666666;
+  text-transform: uppercase;
+}
+
+#font h1 {
+  font-family: Inter;
+  font-size: 52px;
+  font-weight: 400;
+  color: #060b27;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width:40%;
+  flex-wrap:nowrap;
+}
+
+.blur {
+    top:-30%;
+    z-index:-1;
+  position: absolute;
+}
+
+.ellipse p{
+    font-family: Inter;
+font-weight: 500;
+text-align: center;
+color: #5A5A5A;
+}
+
+.bw {
+  display: flex;
+  gap: 200px;
+  height: 350px;
+  flex-wrap:nowrap;
+}
+
+.ellipse {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+.ellipse img{
+    width:12vw;
+}
+
+.one {
+  justify-content: flex-start;
+}
+
+.two {
+  justify-content: flex-end;
+}
+
+.zero {
+  translate: 40px 0px;
+}
+
+.hold{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    margin-top:50px;
+}
+
+.logo{
+    width:20%;
+}
+
+.table{
+border: 1px solid transparent;
+border-image: linear-gradient(79.73deg, #F57A4E 0%, #E32452 99.52%);
+  border-image-slice: 1;
+border-radius: 8px;
+display:flex;
+flex-direction:column;
+width:20%;
+padding:2%;
+height:80vh;
+justify-content:space-evenly;
+flex-wrap:nowrap;
+align-items:center;
+}
+.table img{
+    width: 30%;
+height: 20%;
+}
+.table p{
+    font-family: Montserrat;
+font-size: 100%;
+font-weight: 400;
+text-align: center;
+color: #131313;
+}
+
+.unleash{
+    display:flex;
+    justify-content:center;
+    margin-top:200px;
+    padding-left:10%;
+    padding-right:10%;
+}
+.element{
+border-radius: 4px;
+border: 1px solid #E7E7E7;
+margin:10px;
+    box-shadow: 0px 10px 20px 0px #75787A14;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    overflow: clip;
+width:15vw;
+height:15vw;
+}
+.element img{
+    width:60%;
+    height:auto;
+}
+.element h3{
+    font-family: Inter;
+font-size: 100%;
+font-weight: 400;
+text-align: center;
+width:90%;
+}
+footer {
+  margin-top: 80px;
+  background: linear-gradient(79.73deg, #611ce0 0%, #0e9aed 99.52%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  justify-content: space-evenly;
+  color: white;
+}
+.p3 {
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: center;
+  color: #ffffff;
+  width: 60%;
+}
+footer button {
+  padding: 1rem 2rem;
+  border-radius: 6rem;
+  border: 0;
+  font-weight: 700;
+  font-size: 18px;
+  mix-blend-mode: lighten;
+}
+.foot {
+  display: flex;
+  align-items: center;
+}
+
+.listf {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0 50px;
+}
+
+.listf li {
+  display: flex;
+  align-items: center;
+}
+
+.listf li a {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: underline;
+  padding: 2px 8px;
+}
+.social {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
