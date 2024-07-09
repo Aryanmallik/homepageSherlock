@@ -41,6 +41,7 @@ header {
   justify-content: space-between;
   height: 96px;
   list-style: none;
+  overflow:visible;
   margin: 0 50px;
 }
 
