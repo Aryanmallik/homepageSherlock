@@ -6,34 +6,34 @@
     <title>Solutions</title>
   </head>
   <body>
-      <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const items = document.querySelectorAll('.item');
-  let activeItem = document.querySelector('.item:nth-child(2)');
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const items = document.querySelectorAll(".item");
+        let activeItem = document.querySelector(".item:nth-child(2)");
 
-  activeItem.classList.add('active');
+        activeItem.classList.add("active");
 
-  items.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      items.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-    });
+        items.forEach((item) => {
+          item.addEventListener("mouseenter", () => {
+            items.forEach((i) => i.classList.remove("active"));
+            item.classList.add("active");
+          });
 
-    item.addEventListener('mouseleave', () => {
-      setTimeout(() => {
-        if (!document.querySelector('.item:hover')) {
-          items.forEach(i => i.classList.remove('active'));
-          activeItem.classList.add('active');
-        }
-      }, 100); 
-    });
+          item.addEventListener("mouseleave", () => {
+            setTimeout(() => {
+              if (!document.querySelector(".item:hover")) {
+                items.forEach((i) => i.classList.remove("active"));
+                activeItem.classList.add("active");
+              }
+            }, 100);
+          });
 
-    item.addEventListener('mouseenter', () => {
-      activeItem = item;
-    });
-  });
-});
-</script>
+          item.addEventListener("mouseenter", () => {
+            activeItem = item;
+          });
+        });
+      });
+    </script>
 
     <header>
       <div id="overlay">
@@ -42,14 +42,14 @@ document.addEventListener("DOMContentLoaded", function() {
         </a>
         <ul id="list">
           <li><a href="./">Home</a></li>
-                <li class="dropdown">
-        <a href="./solutions.html">Solutions</a>
-        <ul class="dropdown-content">
-          <li><a href="./solution1.html">Solution 1</a></li>
-          <li><a href="./solution2.html">Solution 2</a></li>
-          <li><a href="./solution3.html">Solution 3</a></li>
-        </ul>
-      </li>
+          <li class="dropdown">
+            <a href="./solutions.html">Solutions</a>
+            <ul class="dropdown-content">
+              <li><a href="./solution1.html">Banking & Finance</a></li>
+              <li><a href="./solution2.html">Hospitality & Tourism</a></li>
+              <li><a href="./solution3.html">Retail & Ecommerce</a></li>
+            </ul>
+          </li>
           <li><a>Blog</a></li>
           <li><a>About</a></li>
         </ul>

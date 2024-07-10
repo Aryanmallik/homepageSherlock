@@ -125,13 +125,15 @@ header {
 
 #Transform {
   font-family: Inter;
-  font-size: 52px;
+  font-size: 300%;
   font-weight: 400;
   letter-spacing: 0.9px;
+  width:95%;
+  text-align:center;
 }
 #Change {
   font-family: Inter;
-  font-size: 18px;
+  font-size: 100%;
   font-weight: 400;
   width: 50%;
   text-align:center;
@@ -170,8 +172,8 @@ header {
 }
 
 .item {
-  width: 10vw;
-  height: 55vh;
+  width: 13vw;
+  height: 60vh;
   border-radius: 15px;
   overflow: hidden;
   transition: width 0.7s ease-in-out;
@@ -209,14 +211,13 @@ header {
 
 .item:hover,
 .item.active {
-  width: 759px;
+  width: 40vw;
   z-index: 1;
 }
 
 .item:hover img,
 .item.active img {
-  height: 100%;
-  width: auto;
+    object-fit:cover;
 }
 
 #help {
@@ -267,7 +268,7 @@ color: #5A5A5A;
 .bw {
   display: flex;
   gap: 200px;
-  height: 350px;
+  height:40vh;
   flex-wrap:nowrap;
 }
 
@@ -306,13 +307,12 @@ color: #5A5A5A;
 .table{
 border: 1px solid transparent;
 border-image: linear-gradient(79.73deg, #F57A4E 0%, #E32452 99.52%);
-  border-image-slice: 1;
-border-radius: 8px;
+border-image-slice: 1;
+border-radius: 45px;
 display:flex;
 flex-direction:column;
 width:20%;
 padding:2%;
-height:80vh;
 justify-content:space-evenly;
 flex-wrap:nowrap;
 align-items:center;
@@ -372,12 +372,11 @@ footer {
 }
 .p3 {
   font-family: Inter;
-  font-size: 32px;
+  font-size: 180%;
   font-weight: 700;
   line-height: 40px;
   text-align: center;
   color: #ffffff;
-  width: 60%;
 }
 footer button {
   padding: 1rem 2rem;
@@ -419,4 +418,124 @@ footer button {
   gap: 20px;
   align-items: center;
 }
+@media (max-width: 850px) {
+    body{
+        width:100vw;
+    }
+  header {
+    margin: 0;
+    height: auto;
+    top: 0%;
+    width: 100%;
+  }
 
+  #overlay {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  #link img {
+    display: none;
+  }
+  #list {
+    margin: 0;
+  }
+
+  #list li {
+    margin: 2px 0;
+  }
+
+  #VerticalBorder {
+    height: auto;
+    width: 30%;
+    margin-top: 10px;
+    flex-shrink: 1;
+  }
+  #VerticalBorder #Link {
+    width: 200px;
+  }
+  #VerticalBorder a {
+    font-size: 80%;
+  }
+  #heading{
+      width:100vw;
+  }
+  #Transform{
+      font-size:200%;
+  }
+  #Change{
+      width:85%;
+  }
+  .blur{
+      width:100vw;
+  }
+.item, .item.active{
+  width: 90%;
+  z-index: 1;
+  height:20vh;
+}
+.item img,.item.active img {
+    width:100%;
+    height:auto;
+}
+.car{
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+}
+.hold{
+    flex-direction:column;
+    gap:50px;
+}
+.bw{
+    height:30vh;
+}
+.table {
+    width: 95%;
+    object-fit:contain;
+}
+.table p{
+}
+#font{
+    margin-left:4px;
+}
+.table img{
+}
+.ellipse img {
+    width: 17vw;
+}
+.element{
+    height:auto;
+    width:auto;
+}
+  
+  .listf {
+    flex-wrap: nowrap;
+  }
+
+  .listf li a {
+    font-size: 90%;
+  }
+
+  footer button {
+    margin-top: 40px;
+  }
+  footer {
+    margin-top: 80px;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+    color: white;
+  }
+  .foot {
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 80%;
+  }
+
+}
