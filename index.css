@@ -867,7 +867,6 @@ footer button {
     font-size: 100%;
     line-height: 22px;
     width: 97%;
-    margin: 20px 0 50px;
   }
 
   .column {
@@ -879,7 +878,7 @@ footer button {
 
   .picitem {
     height: 600px;
-    width: 400px;
+    width: 90%;
   }
   .hin {
     font-size: 150%;
