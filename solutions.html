@@ -6,6 +6,35 @@
     <title>Solutions</title>
   </head>
   <body>
+      <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const items = document.querySelectorAll('.item');
+  let activeItem = document.querySelector('.item:nth-child(2)');
+
+  activeItem.classList.add('active');
+
+  items.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      items.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    });
+
+    item.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!document.querySelector('.item:hover')) {
+          items.forEach(i => i.classList.remove('active'));
+          activeItem.classList.add('active');
+        }
+      }, 100); 
+    });
+
+    item.addEventListener('mouseenter', () => {
+      activeItem = item;
+    });
+  });
+});
+</script>
+
     <header>
       <div id="overlay">
         <a href="./" id="link">
@@ -38,7 +67,6 @@
         growth, efficiency, and profitability. Our solutions aren’t just tools -
         they’re powerful catalysts for change.
       </p>
-      <p></p>
       <div class="Link">
         <a href="./">Book a Demo</a>
       </div>
