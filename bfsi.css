@@ -180,11 +180,10 @@ header {
 }
 .branch p{
     font-family: Inter;
-font-size: 5vw;
-width:50%;
+font-size: 3.6vw;
+width:40vw;
 font-weight: 400;
 line-height: 97.92px;
-letter-spacing: -4px;
 text-align: left;
 
 }
@@ -292,4 +291,55 @@ footer button {
   gap: 20px;
   align-items: center;
 }
+@media (max-width: 871px) {
+    body{
+        width:100vw;
+    }
+  header {
+    margin: 0;
+    height: auto;
+    top: 0%;
+    width: 100%;
+  }
 
+  #overlay {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  #link img {
+    display: none;
+  }
+  #list {
+    margin: 0;
+  }
+
+  #list li {
+    margin: 2px 0;
+  }
+
+  #VerticalBorder {
+    height: auto;
+    width: 30%;
+    margin-top: 10px;
+    flex-shrink: 1;
+  }
+  #VerticalBorder #Link {
+    width: 200px;
+  }
+  #VerticalBorder a {
+    font-size: 80%;
+  }
+  #heading{
+      width:100vw;
+  }
+  #Transform{
+      font-size:200%;
+  }
+  #Change{
+      width:85%;
+  }
+}
