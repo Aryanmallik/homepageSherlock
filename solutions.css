@@ -385,11 +385,18 @@ footer {
 footer button {
   padding: 1rem 2rem;
   border-radius: 6rem;
-  border: 0;
+  border: 2px solid transparent;
   font-weight: 700;
   font-size: 18px;
   mix-blend-mode: lighten;
+    transition:0.3s ease;
 }
+footer button:hover{
+    color:#fff;
+    background:transparent;
+    border:2px solid #fff;
+}
+
 .foot {
   display: flex;
   align-items: center;
