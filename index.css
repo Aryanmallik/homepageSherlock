@@ -600,6 +600,8 @@ header {
   margin-left: 8px;
   flex-wrap: nowrap;
   width:100%;
+  justify-content:center;
+  position:relative;
 }
 .outfaq img {
   width: 45%;
@@ -609,9 +611,9 @@ header {
   width: 30%;
   height: 380px;
   right: 0%;
-  margin-top: 500px;
-  position: absolute;
   z-index: -1;
+  top:60%;
+  position:absolute;
   border-radius: 100px 0px 0px 100px;
   background: linear-gradient(
     79.73deg,
@@ -819,7 +821,7 @@ footer button {
   #VerticalBorder a {
       font-size:min(3vw,17px);
   }
- .dropdowm{
+ .dropdown{
      display:none;
  } 
 
@@ -976,6 +978,7 @@ footer button {
   }
   .sher p {
     width: 96%;
+    text-align:center;
   }
   .sher {
       align-items:flex-start;
@@ -1018,8 +1021,8 @@ footer button {
     font-size: 80%;
   }
   .car {
-    margin-top: 700px;
-  }
+    display:none;
+}
   .outfaq img {
     width: 70%;
     height: auto;
