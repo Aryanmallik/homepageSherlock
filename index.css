@@ -819,6 +819,9 @@ footer button {
   #VerticalBorder a {
       font-size:min(3vw,17px);
   }
+ .dropdowm{
+     display:none;
+ } 
 
   #hero {
     box-sizing: unset;
