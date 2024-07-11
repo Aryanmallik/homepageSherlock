@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+button{
+    cursor:pointer;
+}
+
 html {
 }
 * {
@@ -175,17 +179,17 @@ header {
 .branch{
     display:flex;
     justify-content:center;
-    gap:10vw;
+    gap:7vw;
     align-items:center;
-    margin:25vh 0 25vh 0;
+    margin:20vh 0 10vh 0;
 }
 .br{
     font-family: Inter;
 font-size: 3.6vw;
-width:40vw;
 font-weight: 400;
 line-height: 97.92px;
 text-align: left;
+width:50vw;
 
 }
 .font{
@@ -208,28 +212,11 @@ letter-spacing:0;
 }
 .element{
     display:flex;
-    flex-direction:column;
+    justify-content:center;
 
 }
-.bg{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 400px;
-  background: linear-gradient(79.73deg, #611ce0 0%, #0e9aed 99.52%);
-  text-decoration: none;
-  height:35vh;
-  width:min(90vw,1000px);
-  position:relative;
-  left: 0; 
-  right: 0; 
-  margin-left: auto; 
-  margin-right: auto; 
-}
-.bg img{
-    position:absolute;
-    bottom:0%;
-    width:min(70vw,700px);
+.element img{
+    width:min(70vw,1000px);
 }
 footer {
   margin-top: 80px;
@@ -256,6 +243,7 @@ footer button {
   font-weight: 700;
   font-size: 18px;
   mix-blend-mode: lighten;
+  cursor:pointer;
 }
 .foot {
   display: flex;
@@ -366,10 +354,7 @@ footer button {
   .font .Link2 a{
     font-size:16px;
   }
-  .bg{
-      background:transparent;
-  }
-  .bg img{
+  .element img{
       position:relative;
       margin:20px 0 20px 0;
       width:90%;
