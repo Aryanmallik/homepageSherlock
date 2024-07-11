@@ -506,14 +506,14 @@ header {
 .sher > h2 {
   font-family: Inter;
   text-transform: capitalize;
-  font-size: 45.56px;
+  font-size: min(3vw,45.56px);
   font-weight: 500;
   line-height: 47.6px;
   text-align: center;
 }
 .sher > p {
   font-family: Segoe UI;
-  font-size: 17.72px;
+  font-size: min(5vw,17px);
   font-weight: 400;
   line-height: 30.6px;
   text-align: center;
@@ -544,7 +544,7 @@ header {
   border-bottom: 2px solid transparent;
   transition: border-bottom 0.3s, background-color 0.3s;
   font-family: Segoe UI;
-  font-size: 18px;
+  font-size: min(5vw,18px);
   font-weight: 400;
   line-height: 30.6px;
 }
@@ -571,7 +571,6 @@ header {
 }
 
 .faq div p {
-  width: 402px;
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
@@ -598,7 +597,9 @@ header {
   align-items: center;
   gap: 5vw;
   margin-top: 80px;
+  margin-left: 8px;
   flex-wrap: nowrap;
+  width:100%;
 }
 .outfaq img {
   width: 45%;
@@ -974,7 +975,7 @@ footer button {
     width: 96%;
   }
   .sher {
-    text-align: center;
+      align-items:flex-start;
   }
 
   .enclose {
@@ -986,7 +987,7 @@ footer button {
   }
 
   .tab li {
-    padding: 10px 15px;
+    padding: 10px 7px;
   }
   .mac {
     display: none;
@@ -998,6 +999,7 @@ footer button {
 
   .outfaq {
     flex-direction: column;
+    margin-left:0;
   }
   .demo p {
     width: 100%;
