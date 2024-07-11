@@ -773,13 +773,17 @@ footer button {
   gap: 20px;
   align-items: center;
 }
-@media (max-width: 850px) {
+@media (max-width: 871px) {
+    body{
+        width:100vw;
+    }
   header {
     margin: 0;
     height: auto;
     top: 0%;
     width: 100%;
   }
+
   #overlay {
     position: absolute;
     top: 0%;
@@ -791,13 +795,15 @@ footer button {
   #link img {
     display: none;
   }
-
   #list {
     margin: 0;
   }
 
   #list li {
-    margin: 2px 0;
+    margin: 1vw 0;
+  }
+  #list li a{
+      font-size:min(3vw,17px);
   }
 
   #VerticalBorder {
@@ -806,11 +812,11 @@ footer button {
     margin-top: 10px;
     flex-shrink: 1;
   }
-  #VerticalBorder #Link {
-    width: 200px;
+  #VerticalBorder .Link {
+    width: 400px;
   }
   #VerticalBorder a {
-    font-size: 80%;
+      font-size:min(3vw,17px);
   }
 
   #hero {

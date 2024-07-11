@@ -157,14 +157,14 @@ header {
 
 .Link2 a {
   font-family: "Inter";
-  font-size: 100%;
+  font-size: 19px;
   font-weight: 700;
   text-align: center;
   color: #ffffff;
   text-decoration: none;
 }
 .bfs img{
-    width:40vw;
+    width:min(800px,90vw);
     border-radius:20px;
 }
 .bfs{
@@ -174,11 +174,12 @@ header {
 }
 .branch{
     display:flex;
-    justify-content:space-evenly;
+    justify-content:center;
+    gap:10vw;
     align-items:center;
     margin:25vh 0 25vh 0;
 }
-.branch p{
+.br{
     font-family: Inter;
 font-size: 3.6vw;
 width:40vw;
@@ -192,6 +193,7 @@ text-align: left;
     flex-direction:column;
     width:30vw;
     gap:20px;
+    align-items:center;
 }
 .font p{
     font-family: Inter;
@@ -203,9 +205,6 @@ text-align: left;
 width:100%;
 letter-spacing:0;
 
-}
-.Font div{
-    width:140px;
 }
 .element{
     display:flex;
@@ -219,9 +218,8 @@ letter-spacing:0;
   border-radius: 400px;
   background: linear-gradient(79.73deg, #611ce0 0%, #0e9aed 99.52%);
   text-decoration: none;
-  padding: 20px;
   height:35vh;
-  width:1000px;
+  width:min(90vw,1000px);
   position:relative;
   left: 0; 
   right: 0; 
@@ -231,7 +229,7 @@ letter-spacing:0;
 .bg img{
     position:absolute;
     bottom:0%;
-    height:50vh;
+    width:min(70vw,700px);
 }
 footer {
   margin-top: 80px;
@@ -318,7 +316,10 @@ footer button {
   }
 
   #list li {
-    margin: 2px 0;
+    margin: 1vw 0;
+  }
+  #list li a{
+      font-size:min(3vw,17px);
   }
 
   #VerticalBorder {
@@ -327,14 +328,17 @@ footer button {
     margin-top: 10px;
     flex-shrink: 1;
   }
-  #VerticalBorder #Link {
-    width: 200px;
+  #VerticalBorder .Link {
+    width: 400px;
   }
   #VerticalBorder a {
-    font-size: 80%;
+      font-size:min(3vw,17px);
   }
   #heading{
       width:100vw;
+  }
+  .bg{
+      height:auto;
   }
   #Transform{
       font-size:200%;
@@ -342,4 +346,55 @@ footer button {
   #Change{
       width:85%;
   }
+  .Branch{
+    flex-direction:column;
+    align-items:flex-start;
+    margin:10vh 0 0 0;
+  }
+  .br{
+      width:auto;
+    line-height:normal;
+    font-size:7vw;
+  }
+  .font{
+      width:auto;
+      font-size:4vw;
+  }
+  .font .Link2 a{
+    font-size:16px;
+  }
+  .bg{
+      background:transparent;
+  }
+  .bg img{
+      position:relative;
+      margin:20px 0 20px 0;
+      width:90%;
+  }
+    .listf {
+    flex-wrap: nowrap;
+  }
+
+  .listf li a {
+    font-size: 90%;
+  }
+
+  footer button {
+    margin-top: 40px;
+  }
+  footer {
+    margin-top: 80px;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+    color: white;
+  }
+  .foot {
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 80%;
+  }
+
+
 }
