@@ -799,7 +799,7 @@ footer button {
     padding: 0;
   }
 
-  .link img {
+  #link img {
     display: none;
   }
   #list {
@@ -825,7 +825,7 @@ footer button {
   #VerticalBorder a {
       font-size:min(3vw,17px);
   }
- .dropdown{
+ .dropdown-content{
      display:none;
  } 
 

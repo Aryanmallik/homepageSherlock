@@ -322,9 +322,10 @@ footer button {
   #VerticalBorder a {
       font-size:min(3vw,17px);
   }
- .dropdown{
+   .dropdown-content{
      display:none;
  } 
+
   #heading{
       width:100vw;
   }
