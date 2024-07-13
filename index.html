@@ -5,10 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <title>SherlockAI</title>
   </head>
   <body>
-    <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+         <script>
+    AOS.init();
+
+AOS.init({ duration: 1500, once: true });
+
+document.addEventListener('DOMContentLoaded', function() {
+  function animateValue(element, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      element.innerHTML = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const statElements = document.querySelectorAll('.stat');
+        setTimeout(() => {
+          statElements.forEach(element => {
+            const target = parseInt(element.getAttribute('data-target'), 10);
+            animateValue(element, 0, target, 2000);
+          });
+        }, 600); // 500ms delay before starting the count up
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.1 });
+
+  observer.observe(document.querySelector('.outcomes'));
+});
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('.tab li');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            tabs.forEach(item => item.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
+
+
+          $(window).on("load", function () {
+        initSmoothScrolling(".block", "smoothscroll");
+      });
+
+      function initSmoothScrolling(container, animation) {
+        var sliderWidth = 0;
+        var animationWidth = 0;
+        var sliderHeight = $(
+          `${container} > .animation > div:first-of-type`
+        ).outerHeight(false);
+
+        $(`${container} > .animation > div`).each(function () {
+          animationWidth += $(this).outerWidth(false);
+        });
+
+        var slidesVisible =
+          $(container).width() /
+          $(`${container} > .animation > div:first-of-type`).outerWidth(false);
+        slidesVisible = Math.ceil(slidesVisible);
+
+        var slidesNumber = $(`${container} > .animation > div`).length;
+        var speed = slidesNumber * 2;
+
+        $(`${container} > .animation > div`)
+          .slice(0, slidesVisible)
+          .clone()
+          .appendTo($(`${container} > .animation`));
+
+        $(`${container} > .animation > div`).each(function () {
+          sliderWidth += $(this).outerWidth(false);
+        });
+
+        $(`${container} > .animation`).css({
+          width: sliderWidth,
+          height: sliderHeight,
+        });
+
+        $(
+          `<style type='text/css'>@keyframes ${animation} { 0% { margin-left: 0px; } 100% { margin-left: -${animationWidth}px; } } ${container} > .animation > div:first-of-type { animation: ${animation} ${speed}s linear infinite; }</style>`
+        ).appendTo("head");
+
+        var cl = $(container).attr("class");
+        $(container)
+          .removeClass(cl)
+          .animate({ nothing: null }, 1, function () {
+            $(this).addClass(cl);
+          });
+      }
+
+  </script>
     <section id="hero">
       <img id="vector" src="./Public/Mask Groupdot.png" />
           <header>
@@ -36,9 +139,7 @@
         </div>
       </div>
     </header>
-      <img src="./Public/Char.png" id="img" />
-      <img id="PlatformLogo" src="./Public/Platform Logo.png" />
-      <img id="arrow" src="./Public/ic_round-trending-up.png" />
+    </div>
       <div id="text">
         <div id="t1">Unlock AI Powered Consumer Insights</div>
         <div id="t2">
@@ -50,6 +151,51 @@
         </div>
       </div>
     </section>
+     <div class="outcomes" data-aos="fade-up">
+    <p><span>Significant impacts</span> for impressive clients</p>
+    <div class="oc1">
+      <div class="cardoc">
+        <img src="./Public/Component 1.png"/> 
+        <p><span class="style">Achieved <span class="stat" data-target="98">0</span>%</span><br/>accuracy for revenue potential prediction.</p> 
+      </div>
+      <div class="oc2">
+          <div class="cardoc">
+  <img src="./Public/Frame 47.png"/> 
+  <p><span class="style">Achieved <span class="stat" data-target="8">0</span>x</span><br/>subscriber targets.</p> 
+</div>
+<div class="cardoc">
+  <img src="./Public/pngegg 1.png"/> 
+  <p><span class="style">Achieved <span class="stat" data-target="48">0</span>%</span><br/>Reduced CAC</p> 
+</div>
+      </div>
+    </div>
+  </div>
+
+        <div class="carousel">
+        <p>Companies trust Sherlock with their consumer insights</p>
+            <div class="block">
+      <div class="animation">
+        <div class="first">
+                    <img src="./Public/Client-Logo.png" />
+        </div>
+        <div>
+                    <img src="./Public/Client-Logo-1.png" />
+        </div>
+        <div>
+                    <img src="./Public/Kimberly-Clark.png" />
+        </div>
+        <div>
+                    <img src="./Public/Client-Logo-3.png" />
+        </div>
+        <div>
+                    <img src="./Public/Jaguar.png" />
+        </div>
+        <div>
+                    <img src="./Public/NBA.png" />
+        </div>
+      </div>
+    </div>
+        </div>
     <section class="insights">
       <div class="idk">
         <h2 class="in1">We provide the best insights</h2>
@@ -292,17 +438,6 @@
         </div>
         <img src="./Public/Audience.png" />
         <div class="car"></div>
-      </div>
-      <div class="carousel">
-        <p>Companies trust Sherlock with their consumer insights</p>
-        <div class="group">
-          <img src="./Public/Client-Logo.png" />
-          <img src="./Public/Client-Logo-1.png" />
-          <img src="./Public/Kimberly-Clark.png" />
-          <img src="./Public/Client-Logo-3.png" />
-          <img src="./Public/Jaguar.png" />
-          <img src="./Public/NBA.png" />
-        </div>
       </div>
     </section>
     <section class="demo">

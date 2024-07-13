@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .block {
+        overflow: hidden;
+        width: 800px;
+        margin: 50px auto;
+        background: #fff;
+      }
+      .animation {
+        width: auto;
+        height: 100px;
+        font-size: 0px;
+      }
+      .animation div {
+        display: inline-block;
+        width: auto;
+        float: none;
+        padding: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(window).on("load", function () {
+        initSmoothScrolling(".block", "smoothscroll");
+      });
+
+      function initSmoothScrolling(container, animation) {
+        var sliderWidth = 0;
+        var animationWidth = 0;
+        var sliderHeight = $(
+          `${container} > .animation > div:first-of-type`
+        ).outerHeight(false);
+
+        $(`${container} > .animation > div`).each(function () {
+          animationWidth += $(this).outerWidth(false);
+        });
+
+        var slidesVisible =
+          $(container).width() /
+          $(`${container} > .animation > div:first-of-type`).outerWidth(false);
+        slidesVisible = Math.ceil(slidesVisible);
+
+        var slidesNumber = $(`${container} > .animation > div`).length;
+        var speed = slidesNumber * 2;
+
+        $(`${container} > .animation > div`)
+          .slice(0, slidesVisible)
+          .clone()
+          .appendTo($(`${container} > .animation`));
+
+        $(`${container} > .animation > div`).each(function () {
+          sliderWidth += $(this).outerWidth(false);
+        });
+
+        $(`${container} > .animation`).css({
+          width: sliderWidth,
+          height: sliderHeight,
+        });
+
+        $(
+          `<style type='text/css'>@keyframes ${animation} { 0% { margin-left: 0px; } 100% { margin-left: -${animationWidth}px; } } ${container} > .animation > div:first-of-type { animation: ${animation} ${speed}s linear infinite; }</style>`
+        ).appendTo("head");
+
+        var cl = $(container).attr("class");
+        $(container)
+          .removeClass(cl)
+          .animate({ nothing: null }, 1, function () {
+            $(this).addClass(cl);
+          });
+      }
+    </script>
+    <div class="block">
+      <div class="animation">
+        <div class="first">
+          <img src="http://fpoimg.com/200x200?text=First" />
+        </div>
+        <div>
+          <img src="http://fpoimg.com/200x200?text=Second" />
+        </div>
+        <div>
+          <img src="http://fpoimg.com/200x200?text=Third" />
+        </div>
+        <div>
+          <img src="http://fpoimg.com/200x200" />
+        </div>
+        <div>
+          <img src="http://fpoimg.com/200x200" />
+        </div>
+        <div>
+          <img src="http://fpoimg.com/200x200" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

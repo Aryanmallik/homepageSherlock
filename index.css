@@ -136,7 +136,7 @@ header {
 #hero {
   position: relative;
   width: 100%;
-  height: 653px;
+  height: 100vh;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     linear-gradient(79.73deg, #611ce0 0%, #0e9aed 99.52%);
 }
@@ -217,8 +217,63 @@ header {
     color:#fff;
     border:2px solid #fff;
 }
+.outcomes{
+    display:flex;
+    flex-direction:column;
+  font-family: Montserrat;
+  font-size: min(40px,7vw);
+  font-weight: 500;
+  line-height: 46px;
+  text-align: center;
+  color: #131313;
+  margin-top: 70px;
+  text-align:center;
+}
+.cardoc{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:45%;
+
+}
+.oc1{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top:90px;
+  gap:70px;
+}
+.oc2{
+    justify-content:space-evenly;
+    width:100%;
+    display:flex;
+    
+}
+.cardoc img{
+    width:max(10vw,200px);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px -2px 10px rgba(233, 223, 255, 0.3), 0px -2px 20px rgba(187, 155, 255, 0.15);
+border-radius: 8px;
+
+}
+.cardoc p{
+font-family: 'Montserrat';
+font-style: normal;
+text-align:center;
+font-weight: 600;
+font-size: min(25.5px,6vw);
+text-align: center;
+width:90%;
+}
+.style{
+background: linear-gradient(79.73deg, #611CE0 0%, #0E9AED 99.52%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+
+}
+
 .insights {
-  margin-top: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -233,7 +288,7 @@ header {
 .in1 {
   font-family: Montserrat;
   font-size: 47px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 46px;
   text-align: center;
   color: #131313;
@@ -308,7 +363,7 @@ header {
 #text1 {
   font-family: Montserrat;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 46px;
   text-align: center;
 }
@@ -629,24 +684,41 @@ header {
     rgba(14, 154, 237, 0.5) 99.52%
   );
 }
+
+      .block {
+        overflow: hidden;
+        width: 100vw;
+        margin: 50px auto;
+        background: #fff;
+      }
+      .animation {
+        width: auto;
+        height: 100px;
+        font-size: 0px;
+      }
+      .animation div {
+        display: inline-block;
+        width: auto;
+        float: none;
+        padding: 0 10px;
+      }
+      .animation div img{
+          height:200px;
+          width:200px;
+          margin:3vw;
+      }
+
 .carousel {
-  font-family: Inter;
-  font-size: 30.13px;
+  font-family: Montserrat;
+  font-size: min(40px,6vw);
   font-weight: 500;
-  margin-top: 300px;
+  line-height: 46px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-}
-.group {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-}
-.group img {
-  width: 114.63px;
-  height: 121.63px;
+  text-align:center;
+  margin-bottom:200px;
 }
 .demo {
   position: relative;
@@ -878,6 +950,13 @@ footer button:hover{
   #t4 {
     margin-top: 20px;
   }
+  .oc2{
+      flex-direction:column;
+      align-items:center;
+  }
+  .cardoc{
+      width:100vw;
+  }
 
   .insights {
     flex-direction: column;
@@ -1038,7 +1117,7 @@ footer button:hover{
     display:none;
 }
 .carousel{
-    margin-top:20vh;
+    margin-top:15vh;
 }
   .outfaq img {
     width: 70%;
