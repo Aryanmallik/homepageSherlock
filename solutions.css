@@ -516,6 +516,9 @@ footer button:hover{
     translate:0px 0px;
 }
 .bw{
+    gap:0;
+justify-content:space-between;
+width:95vw;
     height:30vh;
 }
 .table {
@@ -530,7 +533,7 @@ footer button:hover{
 .table img{
 }
 .ellipse img {
-    width: 17vw;
+    width: 25vw;
 }
 .element{
     height:auto;
