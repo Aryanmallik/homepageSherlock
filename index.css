@@ -492,6 +492,9 @@ header {
   font-weight: 400;
   text-align: left;
 }
+.out a{
+    text-decoration:none;
+}
 .out button {
   display: flex;
   align-items: center;
@@ -500,7 +503,6 @@ header {
   height: 48px;
   border-radius: 24px;
   background: linear-gradient(79.73deg, #611ce0 0%, #0e9aed 99.52%);
-  text-decoration: none;
   font-family: Inter;
   font-size: 16px;
   font-weight: 700;
@@ -585,6 +587,7 @@ header {
 }
 .sher {
   margin-top: 80px;
+  margin-bottom: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
