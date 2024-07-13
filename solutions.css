@@ -509,6 +509,12 @@ footer button:hover{
     flex-direction:column;
     gap:50px;
 }
+.one,.two{
+    justify-content:center;
+}
+.zero{
+    translate:0px 0px;
+}
 .bw{
     height:30vh;
 }
