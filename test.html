@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #000;
+      }
       .block {
         overflow: hidden;
         width: 800px;
@@ -34,17 +41,13 @@
       function initSmoothScrolling(container, animation) {
         var sliderWidth = 0;
         var animationWidth = 0;
-        var sliderHeight = $(
-          `${container} > .animation > div:first-of-type`
-        ).outerHeight(false);
+        var sliderHeight = $(`${container} > .animation > div:first-of-type`).outerHeight(false);
 
         $(`${container} > .animation > div`).each(function () {
           animationWidth += $(this).outerWidth(false);
         });
 
-        var slidesVisible =
-          $(container).width() /
-          $(`${container} > .animation > div:first-of-type`).outerWidth(false);
+        var slidesVisible = $(container).width() / $(`${container} > .animation > div:first-of-type`).outerWidth(false);
         slidesVisible = Math.ceil(slidesVisible);
 
         var slidesNumber = $(`${container} > .animation > div`).length;
@@ -59,10 +62,7 @@
           sliderWidth += $(this).outerWidth(false);
         });
 
-        $(`${container} > .animation`).css({
-          width: sliderWidth,
-          height: sliderHeight,
-        });
+        $(`${container} > .animation`).css({ width: sliderWidth, height: sliderHeight });
 
         $(
           `<style type='text/css'>@keyframes ${animation} { 0% { margin-left: 0px; } 100% { margin-left: -${animationWidth}px; } } ${container} > .animation > div:first-of-type { animation: ${animation} ${speed}s linear infinite; }</style>`
@@ -100,3 +100,4 @@
     </div>
   </body>
 </html>
+

@@ -69,46 +69,50 @@ document.addEventListener('DOMContentLoaded', function() {
       function initSmoothScrolling(container, animation) {
         var sliderWidth = 0;
         var animationWidth = 0;
-        var sliderHeight = $(
-          `${container} > .animation > div:first-of-type`
-        ).outerHeight(false);
+        var $container = $(container);
+        var $slider = $(">div", $container);
+        var $slides = $(">div>div", $container);
 
-        $(`${container} > .animation > div`).each(function () {
+        var sliderHeight = $slides.first().outerHeight(false);
+
+        $slides.each(function () {
           animationWidth += $(this).outerWidth(false);
         });
 
-        var slidesVisible =
-          $(container).width() /
-          $(`${container} > .animation > div:first-of-type`).outerWidth(false);
-        slidesVisible = Math.ceil(slidesVisible);
-
-        var slidesNumber = $(`${container} > .animation > div`).length;
+        var slidesVisible = Math.ceil($container.width() / $slides.first().outerWidth(false));
+        var slidesNumber = $slides.length;
         var speed = slidesNumber * 2;
 
-        $(`${container} > .animation > div`)
-          .slice(0, slidesVisible)
-          .clone()
-          .appendTo($(`${container} > .animation`));
+        $slides.slice(0, slidesVisible).clone().appendTo($slider);
 
-        $(`${container} > .animation > div`).each(function () {
+        $slider.find(">div").each(function () {
           sliderWidth += $(this).outerWidth(false);
         });
 
-        $(`${container} > .animation`).css({
-          width: sliderWidth,
-          height: sliderHeight,
-        });
+        $slider.css({ width: sliderWidth, height: sliderHeight });
 
         $(
-          `<style type='text/css'>@keyframes ${animation} { 0% { margin-left: 0px; } 100% { margin-left: -${animationWidth}px; } } ${container} > .animation > div:first-of-type { animation: ${animation} ${speed}s linear infinite; }</style>`
+          `<style type='text/css'>@keyframes ${animation} { 0% { transform: translateX(0); } 100% { transform: translateX(-${animationWidth}px); } } ${container} > div { animation: ${animation} ${speed}s linear infinite; }</style>`
         ).appendTo("head");
 
-        var cl = $(container).attr("class");
-        $(container)
+        var cl = $container.attr("class");
+        $container
           .removeClass(cl)
           .animate({ nothing: null }, 1, function () {
             $(this).addClass(cl);
           });
+
+        $(window).resize(function () {
+          $slider.css("animation", "none");
+          animationWidth = 0;
+          $slides.each(function () {
+            animationWidth += $(this).outerWidth(false);
+          });
+          $(
+            `<style type='text/css'>@keyframes ${animation} { 0% { transform: translateX(0); } 100% { transform: translateX(-${animationWidth}px); } } ${container} > div { animation: ${animation} ${speed}s linear infinite; }</style>`
+          ).appendTo("head");
+          $slider.css("animation", "");
+        });
       }
 
   </script>
