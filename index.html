@@ -4,65 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
     <title>SherlockAI</title>
   </head>
   <body>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-         <script>
-    AOS.init();
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      AOS.init();
 
-AOS.init({ duration: 1500, once: true });
+      AOS.init({ duration: 1500, once: true });
 
-document.addEventListener('DOMContentLoaded', function() {
-  function animateValue(element, start, end, duration) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      element.innerHTML = Math.floor(progress * (end - start) + start);
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
-    };
-    window.requestAnimationFrame(step);
-  }
+      document.addEventListener("DOMContentLoaded", function () {
+        function animateValue(element, start, end, duration) {
+          let startTimestamp = null;
+          const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min(
+              (timestamp - startTimestamp) / duration,
+              1
+            );
+            element.innerHTML = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+              window.requestAnimationFrame(step);
+            }
+          };
+          window.requestAnimationFrame(step);
+        }
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const statElements = document.querySelectorAll('.stat');
-        setTimeout(() => {
-          statElements.forEach(element => {
-            const target = parseInt(element.getAttribute('data-target'), 10);
-            animateValue(element, 0, target, 2000);
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const statElements = document.querySelectorAll(".stat");
+                setTimeout(() => {
+                  statElements.forEach((element) => {
+                    const target = parseInt(
+                      element.getAttribute("data-target"),
+                      10
+                    );
+                    animateValue(element, 0, target, 2000);
+                  });
+                }, 600); // 500ms delay before starting the count up
+                observer.disconnect();
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        observer.observe(document.querySelector(".outcomes"));
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabs = document.querySelectorAll(".tab li");
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", function () {
+            tabs.forEach((item) => item.classList.remove("active"));
+            this.classList.add("active");
           });
-        }, 600); // 500ms delay before starting the count up
-        observer.disconnect();
-      }
-    });
-  }, { threshold: 0.1 });
-
-  observer.observe(document.querySelector('.outcomes'));
-});
-
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-    const tabs = document.querySelectorAll('.tab li');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function () {
-            tabs.forEach(item => item.classList.remove('active'));
-            this.classList.add('active');
         });
-    });
-});
+      });
 
-
-          $(window).on("load", function () {
+      $(window).on("load", function () {
         initSmoothScrolling(".block", "smoothscroll");
       });
 
@@ -79,7 +91,9 @@ document.addEventListener('DOMContentLoaded', function() {
           animationWidth += $(this).outerWidth(false);
         });
 
-        var slidesVisible = Math.ceil($container.width() / $slides.first().outerWidth(false));
+        var slidesVisible = Math.ceil(
+          $container.width() / $slides.first().outerWidth(false)
+        );
         var slidesNumber = $slides.length;
         var speed = slidesNumber * 2;
 
@@ -96,11 +110,9 @@ document.addEventListener('DOMContentLoaded', function() {
         ).appendTo("head");
 
         var cl = $container.attr("class");
-        $container
-          .removeClass(cl)
-          .animate({ nothing: null }, 1, function () {
-            $(this).addClass(cl);
-          });
+        $container.removeClass(cl).animate({ nothing: null }, 1, function () {
+          $(this).addClass(cl);
+        });
 
         $(window).resize(function () {
           $slider.css("animation", "none");
@@ -114,36 +126,38 @@ document.addEventListener('DOMContentLoaded', function() {
           $slider.css("animation", "");
         });
       }
-
-  </script>
+    </script>
     <section id="hero">
       <img id="vector" src="./Public/Mask Groupdot.png" />
-          <header>
-      <div id="overlay">
-        <a href="./" id="link">
-          <img src="./Public/Logo.png" />
-        </a>
-        <ul id="list">
-          <li><a href="./">Home</a></li>
-          <li class="dropdown">
-            <a href="./solutions.html">Solutions</a>
-            <ul class="dropdown-content">
-              <li><a href="./bfsi.html">Banking & Finance</a></li>
-              <li><a href="./h&t.html">Hospitality & Tourism</a></li>
-              <li><a href="./r&e.html">Retail & Ecommerce</a></li>
-            </ul>
-          </li>
-          <li><a href="./blog.html">Blog</a></li>
-          <li><a href="./about.html">About</a></li>
-        </ul>
-        <div id="VerticalBorder">
-          <div class="Link">
-            <a target="_blank" href="https://calendly.com/Sherlockai/discoverycall">Request demo</a>
+      <header>
+        <div id="overlay">
+          <a href="./" id="link">
+            <img src="./Public/Logo.png" />
+          </a>
+          <ul id="list">
+            <li><a href="./">Home</a></li>
+            <li class="dropdown">
+              <a href="./solutions.html">Solutions</a>
+              <ul class="dropdown-content">
+                <li><a href="./bfsi.html">Banking & Finance</a></li>
+                <li><a href="./h&t.html">Hospitality & Tourism</a></li>
+                <li><a href="./r&e.html">Retail & Ecommerce</a></li>
+              </ul>
+            </li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./about.html">About</a></li>
+          </ul>
+          <div id="VerticalBorder">
+            <div class="Link">
+              <a
+                target="_blank"
+                href="https://calendly.com/Sherlockai/discoverycall"
+                >Request demo</a
+              >
+            </div>
           </div>
         </div>
-      </div>
-    </header>
-    </div>
+      </header>
       <div id="text">
         <div id="t1">Unlock AI Powered Consumer Insights</div>
         <div id="t2">
@@ -151,55 +165,74 @@ document.addEventListener('DOMContentLoaded', function() {
           products.
         </div>
         <div id="t4">
-            <a target="_blank" href="https://calendly.com/Sherlockai/discoverycall"><button><i class="fa fa-calendar" aria-hidden="true"></i> Schedule a Discovery Call</button></a>
+          <a
+            target="_blank"
+            href="https://calendly.com/Sherlockai/discoverycall"
+            ><button>
+              <i class="fa fa-calendar" aria-hidden="true"></i> Schedule a
+              Discovery Call
+            </button></a
+          >
         </div>
       </div>
     </section>
-     <div class="outcomes" data-aos="fade-up">
-    <p><span>Significant impacts</span> for impressive clients</p>
-    <div class="oc1">
-      <div class="cardoc">
-        <img src="./Public/Component 1.png"/> 
-        <p><span class="style">Achieved <span class="stat" data-target="98">0</span>%</span><br/>accuracy for revenue potential prediction.</p> 
-      </div>
-      <div class="oc2">
+    <div class="outcomes" data-aos="fade-up">
+      <p><span>Significant impacts</span> for impressive clients</p>
+      <div class="oc1">
+        <div class="cardoc">
+          <img src="./Public/Component 1.png" />
+          <p>
+            <span class="style"
+              >Achieved <span class="stat" data-target="98">0</span>%</span
+            ><br />accuracy for revenue potential prediction.
+          </p>
+        </div>
+        <div class="oc2">
           <div class="cardoc">
-  <img src="./Public/Frame 47.png"/> 
-  <p><span class="style">Achieved <span class="stat" data-target="8">0</span>x</span><br/>subscriber targets.</p> 
-</div>
-<div class="cardoc">
-  <img src="./Public/pngegg 1.png"/> 
-  <p><span class="style">Achieved <span class="stat" data-target="48">0</span>%</span><br/>Reduced CAC</p> 
-</div>
+            <img src="./Public/Frame 47.png" />
+            <p>
+              <span class="style"
+                >Achieved <span class="stat" data-target="8">0</span>x</span
+              ><br />subscriber targets.
+            </p>
+          </div>
+          <div class="cardoc">
+            <img src="./Public/pngegg 1.png" />
+            <p>
+              <span class="style"
+                >Achieved <span class="stat" data-target="48">0</span>%</span
+              ><br />Reduced CAC
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-        <div class="carousel">
-        <p>Companies trust Sherlock with their consumer insights</p>
-            <div class="block">
-      <div class="animation">
-        <div class="first">
-                    <img src="./Public/Client-Logo.png" />
-        </div>
-        <div>
-                    <img src="./Public/Client-Logo-1.png" />
-        </div>
-        <div>
-                    <img src="./Public/Kimberly-Clark.png" />
-        </div>
-        <div>
-                    <img src="./Public/Client-Logo-3.png" />
-        </div>
-        <div>
-                    <img src="./Public/Jaguar.png" />
-        </div>
-        <div>
-                    <img src="./Public/NBA.png" />
+    <div class="carousel">
+      <p>Companies trust Sherlock with their consumer insights</p>
+      <div class="block">
+        <div class="animation">
+          <div class="first">
+            <img src="./Public/Client-Logo.png" />
+          </div>
+          <div>
+            <img src="./Public/Client-Logo-1.png" />
+          </div>
+          <div>
+            <img src="./Public/Kimberly-Clark.png" />
+          </div>
+          <div>
+            <img src="./Public/Client-Logo-3.png" />
+          </div>
+          <div>
+            <img src="./Public/Jaguar.png" />
+          </div>
+          <div>
+            <img src="./Public/NBA.png" />
+          </div>
         </div>
       </div>
     </div>
-        </div>
     <section class="insights">
       <div class="idk">
         <h2 class="in1">We provide the best insights</h2>
@@ -213,21 +246,21 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="column">
           <div class="picitem">
             <h3 class="hin">
-                Track the daily behaviors of over <span>350 million consumers</span>
+              Track the daily behaviors of over
+              <span>350 million consumers</span>
             </h3>
-            </p>
           </div>
           <div class="picitem">
             <h3 class="hin">
-                <span>40+ datasets</span> that contain geospatial, mobility, and demographic data
+              <span>40+ datasets</span> that contain geospatial, mobility, and
+              demographic data
             </h3>
-            </p>
           </div>
           <div class="picitem">
             <h3 class="hin">
-                 Analyze characteristics like spending capacity and brand affinities
+              Analyze characteristics like spending capacity and brand
+              affinities
             </h3>
-            </p>
           </div>
         </div>
       </div>
@@ -271,10 +304,12 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="col">
           <p>the platform</p>
           <h1>The core propositions that make us the best</h1>
-          <br/>
-          <br/>
+          <br />
+          <br />
         </div>
-        <a target="_blank" href="https://calendly.com/Sherlockai/discoverycall"><button>Book a Demo</button></a>
+        <a target="_blank" href="https://calendly.com/Sherlockai/discoverycall"
+          ><button>Book a Demo</button></a
+        >
       </div>
       <div class="rect1">
         <div class="col2">
@@ -348,7 +383,9 @@ document.addEventListener('DOMContentLoaded', function() {
       <img src="./Public/Mask Group.png" class="dot" />
       <div class="litem">
         <p>Ready for precision? Get the most accurate insights</p>
-        <a target="_blank" href="https://calendly.com/Sherlockai/discoverycall"><button>Request Demo</button></a>
+        <a target="_blank" href="https://calendly.com/Sherlockai/discoverycall"
+          ><button>Request Demo</button></a
+        >
       </div>
       <div class="mac">
         <img class="shadow" src="./Public/shadow.png" />
@@ -358,11 +395,16 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <img src="./Public/Mask Group1.png" class="dotr" />
     </section>
-            <footer>
+    <footer>
       <p class="p3">
         Unlock The Power of SherlockAI To Solve Your Toughest Challenges
       </p>
-      <a target="_blank" href="https://calendly.com/Sherlockai/discoverycall"><button><i class="fa fa-calendar" aria-hidden="true"> </i> Schedule a Discovery Call</button></a>
+      <a target="_blank" href="https://calendly.com/Sherlockai/discoverycall"
+        ><button>
+          <i class="fa fa-calendar" aria-hidden="true"> </i> Schedule a
+          Discovery Call
+        </button></a
+      >
       <div class="foot">
         <p>© 2023 Sherlock AI</p>
         <ul class="listf">
@@ -372,12 +414,19 @@ document.addEventListener('DOMContentLoaded', function() {
         </ul>
         <div class="social">
           Follow Us:
-          <a target="_blank" href="https://www.facebook.com/infiniteanalytics"><img src="./Public/Symbol.png" /></a>
-          <a target="_blank" href="https://twitter.com/infanatweets"><img src="./Public/Symbol (1).png" /></a>
-          <a target="_blank" href="https://www.linkedin.com/company/infinite-analytics/"><img src="./Public/Symbol (2).png" /></a>
+          <a target="_blank" href="https://www.facebook.com/infiniteanalytics"
+            ><img src="./Public/Symbol.png"
+          /></a>
+          <a target="_blank" href="https://twitter.com/infanatweets"
+            ><img src="./Public/Symbol (1).png"
+          /></a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/company/infinite-analytics/"
+            ><img src="./Public/Symbol (2).png"
+          /></a>
         </div>
       </div>
     </footer>
-
   </body>
 </html>
