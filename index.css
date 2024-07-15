@@ -154,6 +154,17 @@ header {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     linear-gradient(79.73deg, #611ce0 0%, #0e9aed 99.52%);
 }
+.herohold{
+    display:flex;
+    top:15vw;
+    width:100vw;
+    position:absolute;
+    justify-content:space-evenly;
+    align-items:center;
+}
+.herohold img{
+    width:40vw;
+}
 #vector {
   position: absolute;
   right: 20%;
@@ -186,31 +197,24 @@ header {
 }
 
 #text {
-  position: absolute;
-  top: 34%;
-  color: white;
   display: flex;
   flex-direction: column;
-  margin-left: 10%;
   gap: 100px;
 }
-#t1 {
-  font-size: 52px;
+#t1 h1{
   font-weight: 700;
+  font-size: min(40px, 7vw);
   line-height: 54px;
+  color: white;
   letter-spacing: 0.5px;
   text-align: left;
-  width: 568px;
-  height: 54px;
   left: 113px;
 }
-#t2 {
-  font-size: 26px;
+#t2 p{
   font-weight: 500;
-  line-height: 35px;
+  font-size: min(20px, 4.2vw);
+  color: white;
   text-align: left;
-  width: 537px;
-  height: 70px;
   left: 112px;
 }
 #t4 {
@@ -974,6 +978,15 @@ footer button:hover {
     height: 100vh;
   }
 
+  .herohold{
+      flex-direction:column;
+      top:15%;
+      align-items:center;
+  }
+  .herohold img{
+      width:min(350px,90vw);
+  }
+
   #img {
     bottom: 0%;
     max-width: 90%;
@@ -991,7 +1004,7 @@ footer button:hover {
 
   #text {
     top: 20%;
-    margin-left: 5%;
+    gap:50px;
   }
 
   #t1 {
