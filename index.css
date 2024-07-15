@@ -1,5 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@font-face {
+    font-family: satoshi;
+    src: url(./satoshi.ttf);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #131313;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  color: #808080;
+}
 button {
   text-decoration: none;
   cursor: pointer;
@@ -287,28 +303,16 @@ header {
   text-align: center;
   justify-content: center;
   align-items: center;
+  gap:20px;
 }
 .in1 {
-  font-family: Montserrat;
-  font-size: 47px;
-  font-weight: 500;
-  line-height: 46px;
+  font-size: min(40px, 6vw);
   text-align: center;
-  color: #131313;
 }
 .in2 {
-  font-family: Inter;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 26px;
   text-align: center;
-  width: 1000.16px;
-  color: #131313;
-  margin: 30px 0px 100px 0px;
 }
 .hin {
-  font-family: Inter;
-  font-size: 20px;
   font-weight: 400;
   line-height: 26px;
   text-align: center;
@@ -381,24 +385,17 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  font-size:200%;
   position: relative;
+  gap:20px;
 }
 #text1 {
-  font-family: Montserrat;
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 46px;
   text-align: center;
 }
 
 #text2 {
-  font-family: Inter;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 26px;
   text-align: center;
-  height: 46px;
-  width: 75%;
+  width:40%;
 }
 .svge {
   position: absolute;
@@ -409,7 +406,6 @@ header {
 
 .rect {
   display: flex;
-  margin-top: 40px;
   gap: 20px;
   justify-content: center;
 }
@@ -424,9 +420,9 @@ header {
     position: absolute;
     top: 50%;
     width: 70%;
+  font-family: "Inter", sans-serif;
     left: 50%;
     color: #fff;
-    font-family: Inter;
     font-size: 20px;
     font-weight: 400;
     line-height: 26px;
@@ -518,15 +514,14 @@ header {
   flex-wrap: nowrap;
 }
 .col {
+    display:flex;
   flex-direction: column;
 }
-.col > p {
+.col> p {
   text-transform: uppercase;
 }
-.col > h1 {
-  font-family: Inter;
-  font-size: 52px;
-  font-weight: 400;
+.col h3 {
+    font-size: min(40px, 6vw);
   text-align: left;
 }
 .out a{
@@ -629,20 +624,15 @@ header {
   flex-direction: column;
   align-items: center;
 }
-.sher > h2 {
-  font-family: Inter;
+.sher h3 {
   text-transform: capitalize;
-  font-size: min(3vw, 45.56px);
-  font-weight: 500;
+    font-size: min(40px, 6vw);
   line-height: 47.6px;
   text-align: center;
 }
 .sher > p {
-  font-family: Inter;
-  font-weight: 400;
   line-height: 26px;
   text-align: center;
-  font-size: min(5vw, 17px);
   width: 60%;
   margin-top: 40px;
 }
@@ -766,17 +756,18 @@ header {
   height: 200px;
   width: 200px;
   margin: 3vw;
+  transition:0.3s ease;
+}
+.animation div img:hover {
+    transform:scale(1.2);
 }
 
 .carousel {
-  font-family: Montserrat;
   font-size: min(40px, 6vw);
-  font-weight: 500;
   line-height: 46px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   text-align: center;
   margin-bottom: 100px;
 }
@@ -893,6 +884,9 @@ footer button:hover {
 .foot {
   display: flex;
   align-items: center;
+}
+.foot p{
+    color:#fff;
 }
 
 .listf {
@@ -1033,7 +1027,6 @@ footer button:hover {
   }
 
   .in1 {
-    font-size: 200%;
     line-height: 36px;
   }
 
@@ -1073,7 +1066,7 @@ footer button:hover {
   }
 
   #text2 {
-    font-size: 90%;
+      width:auto;
     margin-bottom: 20%;
   }
 
