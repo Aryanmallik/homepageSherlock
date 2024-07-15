@@ -745,8 +745,8 @@ header {
 }
 
 .animation div img {
-  height: 150px;
-  width: 150px;
+  height: 175px;
+  width: 175px;
   margin: 3vw;
   transition:0.3s ease;
 }
