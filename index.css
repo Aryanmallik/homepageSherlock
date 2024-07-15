@@ -413,15 +413,33 @@ header {
   gap: 20px;
   justify-content: center;
 }
-.left {
-  width: 454.62px;
-  height: 548.92px;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0) 51.04%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
+.leftu:hover,.up:hover,.ld:hover,.rd:hover{
+    background:#00000054;
+}
+.leftu,.up,.ld,.rd{
+    transition: 0.5s ease;
+}
+.rect span{
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    width: 70%;
+    left: 50%;
+    color: #fff;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: center;
+    opacity:0;
+    transition:opacity 0.7s ease;
+}
+.leftu:hover .left span,
+.squ:hover .up span,
+.ldu:hover .ld span,
+.leftu:hover .leftd span,
+.rdu:hover .rd span{
+    opacity:1;
 }
 .rect div {
   overflow: hidden;
@@ -447,9 +465,28 @@ header {
   z-index: -1;
 }
 
+.el{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+.left {
+    width: 454.62px;
+    height: 548.92px;
+    background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 51.04%,
+    rgba(0, 0, 0, 0.8) 100%
+    );
+}
 .up {
   width: 620px;
   height: 284px;
+}
+.leftd{
+    width: 454.62px;
+    height:242px;
 }
 .sq {
   display: flex;
@@ -462,11 +499,11 @@ header {
   gap: 20px;
 }
 .ld {
-  width: 300px;
+  width: 620px;;
   height: 242px;
 }
 .rd {
-  width: 300px;
+  width: 620px;
   height: 242px;
 }
 .core {
@@ -548,6 +585,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  transition: 1s ease;
 }
 
 .color {
@@ -569,7 +607,6 @@ header {
 .element:hover {
   height: 145px;
   background: #f7f7f7;
-  transition: 1s ease;
 }
 
 .element:hover .hidden {
