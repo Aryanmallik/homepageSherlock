@@ -813,6 +813,13 @@ header {
   font-size: 18px;
   mix-blend-mode: lighten;
   width: 200px;
+  transition:0.3s ease;
+  border:1px solid transparent;
+}
+.demo button:hover{
+    background:transparent;
+    color:#fff;
+  border:1px solid #fff;
 }
 .demo p {
   font-family: Inter;
