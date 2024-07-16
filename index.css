@@ -397,12 +397,13 @@ header {
   justify-content: center;
 }
 .leftu:hover,.up:hover,.ld:hover,.rd:hover{
-    background:#00000054;
+    background:transparent;
 }
 .leftu,.up,.ld,.rd{
     position: relative;
     transition: 0.5s ease;
     max-width:80vw;
+    background:#00000054;
 }
 .rect span{
     transform: translate(-50%, -50%);
@@ -416,7 +417,7 @@ header {
     font-weight: 400;
     line-height: 26px;
     text-align: center;
-    opacity:0;
+    opacity:1;
     transition:opacity 0.7s ease;
     cursor:default;
 }
@@ -425,7 +426,7 @@ header {
 .ldu:hover .ld span,
 .leftu:hover .leftd span,
 .rdu:hover .rd span{
-    opacity:1;
+    opacity:0;
 }
 .rect div {
   overflow: hidden;
