@@ -50,7 +50,7 @@
                       element.getAttribute("data-target"),
                       10
                     );
-                    animateValue(element, 0, target, 2000);
+                    animateValue(element, 0, target, 2500);
                   });
                 }, 600); 
                 observer.disconnect();
@@ -63,6 +63,31 @@
         observer.observe(document.querySelector(".outcomes"));
       });
 
+
+      document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll(".outerDiv");
+
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", function () {
+            const isActive = this.classList.contains("active");
+
+            tabs.forEach((item) => {
+                item.querySelector(".hiddenFaq").classList.remove("active");
+                item.classList.remove("active");
+                item.style.maxHeight = "69px";
+            });
+
+            if (!isActive) {
+                this.classList.add("active");
+                    this.querySelector(".hiddenFaq").classList.add("active");
+
+                const hiddenFaq = this.querySelector(".hiddenFaq");
+                this.style.maxHeight = `${hiddenFaq.scrollHeight + 69}px`;
+            }
+        });
+    });
+});
+
       document.addEventListener("DOMContentLoaded", function () {
         const tabs = document.querySelectorAll(".tab li");
 
@@ -73,6 +98,9 @@
           });
         });
       });
+
+
+
 
       $(window).on("load", function () {
         initSmoothScrolling(".block", "smoothscroll");
@@ -380,21 +408,33 @@
       </div>
       <div class="outfaq">
         <div class="faq">
-          <div>
-            <p>How does Sherlock AI collect and source its data?</p>
+          <div class="outerDiv">
+              <div class="innerDiv">
+            <h3>How does Sherlock AI collect and source its data?</h3>
             <img src="./Public/Vector.png" />
+              </div>
+            <p class="hiddenFaq">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
           </div>
-          <div>
-            <p>How do data protection laws affect Sherlock AI?</p>
+          <div class="outerDiv">
+              <div class="innerDiv">
+            <h3>How do data protection laws affect Sherlock AI?</h3>
             <img src="./Public/Vector.png" />
+              </div>
+            <p class="hiddenFaq">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
           </div>
-          <div>
-            <p>What is an audience?</p>
+          <div class="outerDiv">
+              <div class="innerDiv">
+            <h3>What is an audience?</h3>
             <img src="./Public/Vector.png" />
+              </div>
+            <p class="hiddenFaq">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
           </div>
-          <div>
-            <p>Can I make my own custom audience?</p>
+          <div class="outerDiv">
+              <div class="innerDiv">
+            <h3>Can I make my own custom audience?</h3>
             <img src="./Public/Vector.png" />
+              </div>
+            <p class="hiddenFaq">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
           </div>
         </div>
         <img src="./Public/Audience.png" />

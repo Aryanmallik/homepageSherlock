@@ -418,6 +418,7 @@ header {
     text-align: center;
     opacity:0;
     transition:opacity 0.7s ease;
+    cursor:default;
 }
 .leftu:hover .left span,
 .squ:hover .up span,
@@ -674,29 +675,56 @@ header {
   width: 472px;
 }
 
-.faq div p {
-  font-family: Inter;
-  font-weight: 400;
-  font-family: Inter;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
+.faq div h3 {
+  font-weight: 500;
+  font-size: min(17px, 3vw);
   text-align: left;
 }
 .faq div img {
   width: 11.25px;
   height: 7.26px;
+    transform: rotate(90deg); 
+    transition: transform 0.5s ease;
 }
-.faq div {
-  border-bottom: 1px solid transparent;
-  border-image: linear-gradient(79.73deg, #611ce0 0%, #0e9aed 99.52%);
-  border-image-slice: 1;
-  padding-bottom: 10px;
-  height: 69px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+.outerDiv {
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(79.73deg, #611ce0 0%, #0e9aed 99.52%);
+    border-image-slice: 1;
+    cursor: pointer;
+    padding-bottom: 10px;
+    display: flex;
+    min-height: 69px;
+    max-height: 69px;
+    overflow: hidden;
+    flex-direction: column;
 }
+
+.outerDiv.active {
+}
+
+.outerDiv.active img {
+    transform:rotate(-4deg);
+}
+
+.innerDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hiddenFaq {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.hiddenFaq.active {
+    text-align:left;
+    display: block;
+    opacity: 1;
+}
+
 
 .outfaq {
   display: flex;
