@@ -101,60 +101,6 @@
       });
 
 
-
-
-      $(window).on("load", function () {
-        initSmoothScrolling(".block", "smoothscroll");
-      });
-
-      function initSmoothScrolling(container, animation) {
-        var sliderWidth = 0;
-        var animationWidth = 0;
-        var $container = $(container);
-        var $slider = $(">div", $container);
-        var $slides = $(">div>div", $container);
-
-        var sliderHeight = $slides.first().outerHeight(false);
-
-        $slides.each(function () {
-          animationWidth += $(this).outerWidth(false);
-        });
-
-        var slidesVisible = Math.ceil(
-          $container.width() / $slides.first().outerWidth(false)
-        );
-        var slidesNumber = $slides.length;
-        var speed = slidesNumber * 2;
-
-        $slides.slice(0, slidesVisible).clone().appendTo($slider);
-
-        $slider.find(">div").each(function () {
-          sliderWidth += $(this).outerWidth(false);
-        });
-
-        $slider.css({ width: sliderWidth, height: sliderHeight });
-
-        $(
-          `<style type='text/css'>@keyframes ${animation} { 0% { transform: translateX(0); } 100% { transform: translateX(-${animationWidth}px); } } ${container} > div { animation: ${animation} ${speed}s linear infinite; }</style>`
-        ).appendTo("head");
-
-        var cl = $container.attr("class");
-        $container.removeClass(cl).animate({ nothing: null }, 1, function () {
-          $(this).addClass(cl);
-        });
-
-        $(window).resize(function () {
-          $slider.css("animation", "none");
-          animationWidth = 0;
-          $slides.each(function () {
-            animationWidth += $(this).outerWidth(false);
-          });
-          $(
-            `<style type='text/css'>@keyframes ${animation} { 0% { transform: translateX(0); } 100% { transform: translateX(-${animationWidth}px); } } ${container} > div { animation: ${animation} ${speed}s linear infinite; }</style>`
-          ).appendTo("head");
-          $slider.css("animation", "");
-        });
-      }
     </script>
     <section id="hero">
       <img id="vector" src="./Public/Mask Groupdot.png" />
@@ -210,31 +156,19 @@
         <img src="./Public/Component 2.png" data-aos="fade-up"/>
       </div>
     </section>
-    <div class="carousel">
-        <h3>Loved and trusted by</h3>
-      <div class="block">
-        <div class="animation">
-          <div class="first">
-            <img src="./Public/Client-Logo.png" />
-          </div>
-          <div>
-            <img src="./Public/Client-Logo-1.png" />
-          </div>
-          <div>
-            <img src="./Public/Kimberly-Clark.png" />
-          </div>
-          <div>
-            <img src="./Public/Client-Logo-3.png" />
-          </div>
-          <div>
-            <img src="./Public/Jaguar.png" />
-          </div>
-          <div>
-            <img src="./Public/NBA.png" />
-          </div>
-        </div>
-      </div>
+     <div class="carousel">
+    <h3>Loved and trusted by</h3>
+    <div class="marquee marquee--8">
+        <img class="marquee__item" src="./Public/Client-Logo.png"  alt="">
+        <img class="marquee__item" src="./Public/Client-Logo-1.png"  alt="">
+        <img class="marquee__item" src="./Public/Kimberly-Clark.png"  alt="">
+        <img class="marquee__item" src="./Public/Client-Logo-3.png"  alt="">
+        <img class="marquee__item" src="./Public/Jaguar.png"  alt="">
+        <img class="marquee__item" src="./Public/NBA.png"  alt="">
     </div>
+  </div>
+
+
     <div class="outcomes" >
         <h3><span>Significant impacts</span> for impressive clients</h3>
         <div class="oc1"data-aos="fade-up" data-aos-delay="400" >
