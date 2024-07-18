@@ -678,8 +678,10 @@ header {
 
 .faq div h3 {
   font-weight: 500;
-  font-size: min(17px, 3vw);
+  font-size: min(17px, 4vw);
   text-align: left;
+  width:90%;
+  line-height:20px;
 }
 .faq div img {
   width: 11.25px;
@@ -699,10 +701,9 @@ header {
     max-height: 69px;
     overflow: hidden;
     flex-direction: column;
+    transition: 0.5s ease;
 }
 
-.outerDiv.active {
-}
 
 .outerDiv.active img {
     transform:rotate(-4deg);
@@ -712,18 +713,27 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width:472px;
+    position:absolute;
 }
 
 .hiddenFaq {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    display: block;
+    margin-top:90px;
+    opacity: 1;
+    z-index:1;
+    position:relative;
+    font-size: min(17px, 4vw);
+}
+.hide li p{
+    font-size: min(15px, 3.5vw);
 }
 
 .hiddenFaq.active {
     text-align:left;
     display: block;
     opacity: 1;
+    bottom:0%;
 }
 
 
@@ -1269,6 +1279,9 @@ footer button:hover {
 
   .faq {
     width: 90%;
+  }
+  .innerDiv{
+      width:90%;
   }
 
   .outfaq {

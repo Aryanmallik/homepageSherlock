@@ -20,7 +20,7 @@
     <script>
       AOS.init();
 
-      AOS.init({ duration: 1500, once: true});
+      AOS.init({ duration: 1500, once: true });
 
       document.addEventListener("DOMContentLoaded", function () {
         function animateValue(element, start, end, duration) {
@@ -52,7 +52,7 @@
                     );
                     animateValue(element, 0, target, 2500);
                   });
-                }, 600); 
+                }, 600);
                 observer.disconnect();
               }
             });
@@ -63,44 +63,158 @@
         observer.observe(document.querySelector(".outcomes"));
       });
 
+      const faqData = {
+        general: [
+          {
+            question: "What is Sherlock AI",
+            answer:
+              "Sherlock AI is an AI engine that makes digital marketing super easy and cost-efficient by understanding consumer behavior and targeting high-intent consumers.",
+          },
+          {
+            question: "Where can I find tutorials to use Sherlock AI?",
+            answer:
+              "You can check out our YouTube channel to find step-by-step guides on how to use our platform. We'll also be updating this page in the future with more in-depth walkthroughs to help you make the most of your Sherlock AI experience.",
+          },
+            {
+                question: "How does Sherlock AI understand consumer behavior signals?",
+                answer:"Sherlock AI uses over 40 datasets that covers over 350 million global consumers to analyze dozens of parameters and get at the heart of their mindset and behaviors. Some of the parameters we look at include:<br/>• Geospatial Location<br/>• Demographics<br/>• Mobility<br/>• Transactions<br/>• App Usage",
+            },
+            {
+                question: "What social platforms are compatible with Sherlock AI?",
+                answer:"Sherlock AI is platform agnostic, which means it'll work for any social media platforms you want to target. Facebook, Google, TikTok, Twitter, Snapchat - you name it, we'll support it.",
+            },
+            {
+                question: "How soon can I get started on running high-intent campaigns?",
+                answer:"Once you've registered for Sherlock AI, all you'll need to do is integrate your business managers and Pixel to Sherlock AI and you'll be all set to create custom audiences to use for your campaigns!",
+            },
+            {
+                question: "How long does it take to see results?",
+                answer:"On average, it takes approximately 2-3 months for Sherlock AI to produce the best results. We use this time to calibrate Sherlock AI to understand your unique use case and identify what's working and what isn't, and this ultimately ensures that you're getting the most out of what you spend for your campaigns.",
+        },
+        ],
+        "data-audience": [
+          {
+            question: "How does Sherlock AI collect and source its data?",
+            answer:
+              "We use a variety of methods to collect, source, and build our data, which ranges from working with world-leading companies (e.g. consumer technology, telecom, credit card, and point-of-service operators), and scraping through public marketplaces, classifieds, and government data.",
+          },
+          {
+            question: "How do data protection laws affect Sherlock AI?",
+            answer:
+              "Sherlock AI was built with data protection policies in mind, therefore it is 100% compliant with the General Data Protection Regulation (GDPR) and California Consumer Policy Act (CCPA). Sherlock AI does not use any personally identifiable information (PII).",
+          },
+          {
+            question: "What is an audience?",
+            answer:
+              "Audiences are profiles that you use within a campaign to target specific groups of people based on dozens of parameters that either you set or allow Sherlock AI to set. While audience size varies, you can typically reach between 50k to 100 million people each month, with the only real bottleneck being how much you're willing to spend on your campaign(s).",
+          },
+          {
+            question: "Can I make my own custom audience?",
+            answer:
+              "Yes! If you've got a specific group of people in mind that you want to target for your campaigns, you can set a custom audience profile to use. When you create your audience in our Explore tool, you'll also be able to preview how many people you'd be able to reach based on your objective and audience parameters. Alternatively, Sherlock AI provides some default audiences that you can use, which are based around your objective, region, and industry or product type.",
+          },
+        ],
+        pricing: [
+          {
+            question: "How do I register for Sherlock AI?",
+            answer:
+              "As Sherlock AI is currently in beta, you can register with us by scheduling a meeting with us here or sending us a message at contactus@infiniteanalytics.com. When you meet with us, our support team will be able to answer any questions you may have about Sherlock AI, and also recommend which subscription tier would work best for your business' needs and goals.",
+          },
+          {
+            question: "What are support hours, and can I purchase more of them?",
+            answer:
+              "Support hours is the amount of time that a member of our team will personally take to ensure that your experience with using Sherlock AI is as smooth as possible. If you find yourself needing more support from our team, support hours are available to purchase, with the price being based on your subscription tier.",
+          },
+          {
+            question: "What are Campaign Setup, Advisory, and Servicing?",
+            answer:
+              "• Campaign Setup is a basic aid in which we will help you set up your campaign on Sherlock AI.<br/>• Campaign Advisory goes one step further, where we will provide you with some advice on how to best optimize your campaign.<br/>• Campaign Servicing is our most premium service, where we handle and manage the end-to-end campaign processes for you based on the objective you set.",
+          },
+          {
+            question: "Do I need to pay for my campaigns separately from my subscription?",
+            answer:
+              "Yes. When you subscribe to Sherlock AI, you're only paying for the tools to help you identify and target high-intent audiences, not the campaign(s) that you run. Funds must be added to your social media platform's business manager of choice before you can launch and run any campaigns.",
+          },
+          {
+            question: "Are there additional fees that I need to account for beyond the monthly subscription fee?",
+            answer:
+              "The only costs associated with Sherlock AI is the monthly subscription rate, alongside any extra usage that you may come across. Sherlock AI is a software as a service (SaaS) platform, not an agency; this means our goal is to maximize the outcomes of your spends, and not to charge you based on how well you're doing.",
+          },
+        ],
+        clients: [
+          {
+            question: "What industries has Sherlock AI been used for?",
+            answer:
+              "Sherlock AI has been used to assist a diverse range of industries, such as auto, health and wellness, luxury goods, consumer goods, apparel, and many more.",
+          },
+          {
+            question: "How big does my business need to be in order to use Sherlock AI?",
+            answer:
+              "We support businesses of all sizes! One of the driving forces behind our decision to build Sherlock AI was to make consumer insights accessible to everyone, and one of our first steps involved partnering with ICICI Bank's SME services, which opened the door for millions of Indian SMEs to access invaluable tools to building up their businesses.",
+          },
+          {
+            question: "Does Sherlock AI support custom datasets?",
+            answer:
+              "While not natively supported within the platform just yet, our support team will be happy to assist you with integrating your custom dataset(s) into Sherlock AI to use.",
+          },
+        ],
+      };
 
-      document.addEventListener("DOMContentLoaded", function () {
-    const tabs = document.querySelectorAll(".outerDiv");
-
-    tabs.forEach((tab) => {
-        tab.addEventListener("click", function () {
-            const isActive = this.classList.contains("active");
-
-            tabs.forEach((item) => {
-                item.querySelector(".hiddenFaq").classList.remove("active");
-                item.classList.remove("active");
-                item.style.maxHeight = "69px";
-            });
-
-            if (!isActive) {
-                this.classList.add("active");
-                    this.querySelector(".hiddenFaq").classList.add("active");
-
-                const hiddenFaq = this.querySelector(".hiddenFaq");
-                this.style.maxHeight = `${hiddenFaq.scrollHeight + 69}px`;
-            }
-        });
-    });
-});
-
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("DOMContentLoaded", () => {
         const tabs = document.querySelectorAll(".tab li");
+        const faqContent = document.querySelector(".faq");
 
         tabs.forEach((tab) => {
-          tab.addEventListener("click", function () {
-            tabs.forEach((item) => item.classList.remove("active"));
-            this.classList.add("active");
+          tab.addEventListener("click", () => {
+            tabs.forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+            const selectedTab = tab.getAttribute("data-tab");
+            updateFaqContent(selectedTab);
           });
-           tabs[0].classList.add("active") 
         });
+
+        tabs[0].classList.add("active");
+        updateFaqContent("general");
       });
 
+      function updateFaqContent(tab) {
+        const faqContent = document.querySelector(".faq");
+        const selectedFaqs = faqData[tab];
+        faqContent.innerHTML = selectedFaqs
+          .map(
+            (faq) => `
+        <div class="outerDiv">
+          <div class="innerDiv">
+            <h3>${faq.question}</h3>
+            <img src="./Public/Vector.png" />
+          </div>
+          <p class="hiddenFaq">${faq.answer}</p>
+        </div>
+      `
+          )
+          .join("");
+          const tabs = document.querySelectorAll(".outerDiv");
 
+          tabs.forEach((tab) => {
+              tab.addEventListener("click", function () {
+                  const isActive = this.classList.contains("active");
+
+                  tabs.forEach((item) => {
+                      item.querySelector(".hiddenFaq").classList.remove("active");
+                      item.style.maxHeight = "69px";
+                      item.classList.remove("active");
+                  });
+
+                  if (!isActive) {
+                      this.classList.add("active");
+                      this.querySelector(".hiddenFaq").classList.add("active");
+
+                      const hiddenFaq = this.querySelector(".hiddenFaq");
+                      this.style.maxHeight = `${hiddenFaq.scrollHeight + 200}px`;
+                  }
+              });
+          });
+      }
     </script>
     <section id="hero">
       <img id="vector" src="./Public/Mask Groupdot.png" />
@@ -134,93 +248,92 @@
         </div>
       </header>
       <div class="herohold">
-      <div id="text">
+        <div id="text">
           <div id="t1"><h1>Unlock AI Powered Consumer Insights</h1></div>
-        <div id="t2">
+          <div id="t2">
             <p>
-          Deeply understand your consumers to best reach them with the right
-          products.
+              Deeply understand your consumers to best reach them with the right
+              products.
             </p>
+          </div>
+          <div id="t4">
+            <a
+              target="_blank"
+              href="https://calendly.com/Sherlockai/discoverycall"
+              ><button>
+                <i class="fa fa-calendar" aria-hidden="true"></i> Schedule a
+                Discovery Call
+              </button></a
+            >
+          </div>
         </div>
-        <div id="t4">
-          <a
-            target="_blank"
-            href="https://calendly.com/Sherlockai/discoverycall"
-            ><button>
-              <i class="fa fa-calendar" aria-hidden="true"></i> Schedule a
-              Discovery Call
-            </button></a
-          >
-        </div>
-      </div>
-        <img src="./Public/Component 2.png" data-aos="fade-up"/>
+        <img src="./Public/Component 2.png" data-aos="fade-up" />
       </div>
     </section>
-     <div class="carousel">
-    <h3>Loved and trusted by</h3>
-    <div class="marquee marquee--8">
-        <img class="marquee__item" src="./Public/Client-Logo.png"  alt="">
-        <img class="marquee__item" src="./Public/Client-Logo-1.png"  alt="">
-        <img class="marquee__item" src="./Public/Kimberly-Clark.png"  alt="">
-        <img class="marquee__item" src="./Public/Client-Logo-3.png"  alt="">
-        <img class="marquee__item" src="./Public/Jaguar.png"  alt="">
-        <img class="marquee__item" src="./Public/NBA.png"  alt="">
+    <div class="carousel">
+      <h3>Loved and trusted by</h3>
+      <div class="marquee marquee--8">
+        <img class="marquee__item" src="./Public/Client-Logo.png" alt="" />
+        <img class="marquee__item" src="./Public/Client-Logo-1.png" alt="" />
+        <img class="marquee__item" src="./Public/Kimberly-Clark.png" alt="" />
+        <img class="marquee__item" src="./Public/Client-Logo-3.png" alt="" />
+        <img class="marquee__item" src="./Public/Jaguar.png" alt="" />
+        <img class="marquee__item" src="./Public/NBA.png" alt="" />
+      </div>
     </div>
-  </div>
 
-
-    <div class="outcomes" >
-        <h3><span>Significant impacts</span> for impressive clients</h3>
-        <div class="oc1"data-aos="fade-up" data-aos-delay="400" >
-            <div class="cardoc">
-                <img src="./Public/Component 1.png" />
-                <p>
-                <span class="style"
-                      >Achieved <span class="stat" data-target="98">0</span>%</span
-                  ><br />accuracy for revenue potential prediction.
-                </p>
-            </div>
-            <div class="oc2">
-                <div class="cardoc">
-                    <img src="./Public/Frame 47.png" />
-                    <p>
-                    <span class="style"
-                          >Achieved <span class="stat" data-target="8">0</span>x</span
-                      ><br />subscriber targets.
-                    </p>
-                </div>
-                <div class="cardoc">
-                    <img src="./Public/pngegg 1.png" />
-                    <p>
-                    <span class="style"
-                          >Achieved <span class="stat" data-target="48">0</span>%</span
-                      ><br />Reduced CAC
-                    </p>
-                </div>
-            </div>
+    <div class="outcomes">
+      <h3><span>Significant impacts</span> for impressive clients</h3>
+      <div class="oc1" data-aos="fade-up" data-aos-delay="400">
+        <div class="cardoc">
+          <img src="./Public/Component 1.png" />
+          <p>
+            <span class="style"
+              >Achieved <span class="stat" data-target="98">0</span>%</span
+            ><br />accuracy for revenue potential prediction.
+          </p>
         </div>
+        <div class="oc2">
+          <div class="cardoc">
+            <img src="./Public/Frame 47.png" />
+            <p>
+              <span class="style"
+                >Achieved <span class="stat" data-target="8">0</span>x</span
+              ><br />subscriber targets.
+            </p>
+          </div>
+          <div class="cardoc">
+            <img src="./Public/pngegg 1.png" />
+            <p>
+              <span class="style"
+                >Achieved <span class="stat" data-target="48">0</span>%</span
+              ><br />Reduced CAC
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <section class="insights">
-
       <div class="idk">
         <h3 class="in1">We provide the best insights</h3>
         <p class="in2">
-        We believe that connecting data across silos provides the deeper contextual information needed for AI to discover actionable insights.
+          We believe that connecting data across silos provides the deeper
+          contextual information needed for AI to discover actionable insights.
         </p>
         <div class="column">
-          <div class="picitem"data-aos="fade-up" >
+          <div class="picitem" data-aos="fade-up">
             <h3 class="hin">
               Track the daily behaviors of over
               <span>350 million consumers</span>
             </h3>
           </div>
-          <div class="picitem"data-aos="fade-up" data-aos-delay="200">
+          <div class="picitem" data-aos="fade-up" data-aos-delay="200">
             <h3 class="hin">
               <span>40+ datasets</span> that contain geospatial, mobility, and
               demographic data
             </h3>
           </div>
-          <div class="picitem"data-aos="fade-up" data-aos-delay="400">
+          <div class="picitem" data-aos="fade-up" data-aos-delay="400">
             <h3 class="hin">
               Analyze characteristics like spending capacity and brand
               affinities
@@ -232,52 +345,67 @@
     <section class="yus">
       <h3 id="text1">Why us?</h3>
       <p id="text2">
-      Our strong foundation in knowledge graph leads to robust AI grounded in facts and relations, resulting in informed decision-making and increased value for our customers.
+        Our strong foundation in knowledge graph leads to robust AI grounded in
+        facts and relations, resulting in informed decision-making and increased
+        value for our customers.
       </p>
       <div class="rect">
-          <div class="el">
-              <div class="leftu">
-        <div class="left">
-            <span class="Hidden">
-                Gain a richer understanding of your consumers by evaluating them based on their online and offline behaviors, psychographics, transactions, and demographics.
-            </span>
-          <p>Understand Audiences</p>
-          <img src="./Public/grid1.png" />
-        </div>
-              </div>
+        <div class="el">
           <div class="leftu">
-              <div class="leftd">
-                  <img src="./Public/grid4.jpeg" />
-                  <p>Simple Design, Versatile Uses</p>
-                  <span>Understand your audience across multiple dimensions, including visits, cross visits, and behavior.</span>
-              </div>
+            <div class="left">
+              <span class="Hidden">
+                Gain a richer understanding of your consumers by evaluating them
+                based on their online and offline behaviors, psychographics,
+                transactions, and demographics.
+              </span>
+              <p>Understand Audiences</p>
+              <img src="./Public/grid1.png" />
+            </div>
           </div>
-          </div>
-        <div class="sq">
-        <div class="squ">
-          <div class="up">
-            <span class="Hidden">
-                Gain a richer understanding of your consumers by evaluating them based on their online and offline behaviors, psychographics, transactions, and demographics.
-            </span>
-            <img src="./Public/grid2.jpeg" />
-            <p>Data Enrichment</p>
+          <div class="leftu">
+            <div class="leftd">
+              <img src="./Public/grid4.jpeg" />
+              <p>Simple Design, Versatile Uses</p>
+              <span
+                >Understand your audience across multiple dimensions, including
+                visits, cross visits, and behavior.</span
+              >
+            </div>
           </div>
         </div>
-          <div class="down">
-              <div class="ldu">
-            <div class="ld">
-              <img src="./Public/grid3.jpeg" />
-              <p>Audience Segmentation</p>
-              <span>Understand your audience across multiple dimensions, including visits, cross visits, and behavior.</span>
+        <div class="sq">
+          <div class="squ">
+            <div class="up">
+              <span class="Hidden">
+                Gain a richer understanding of your consumers by evaluating them
+                based on their online and offline behaviors, psychographics,
+                transactions, and demographics.
+              </span>
+              <img src="./Public/grid2.jpeg" />
+              <p>Data Enrichment</p>
             </div>
+          </div>
+          <div class="down">
+            <div class="ldu">
+              <div class="ld">
+                <img src="./Public/grid3.jpeg" />
+                <p>Audience Segmentation</p>
+                <span
+                  >Understand your audience across multiple dimensions,
+                  including visits, cross visits, and behavior.</span
+                >
               </div>
+            </div>
           </div>
           <div class="rdu">
-              <div class="rd">
-                  <img src="./Public/grid4.jpeg" />
-                  <p>Simple Design, Versatile Uses</p>
-                  <span>Understand your audience across multiple dimensions, including visits, cross visits, and behavior.</span>
-              </div>
+            <div class="rd">
+              <img src="./Public/grid4.jpeg" />
+              <p>Simple Design, Versatile Uses</p>
+              <span
+                >Understand your audience across multiple dimensions, including
+                visits, cross visits, and behavior.</span
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -335,6 +463,19 @@
       </p>
       <div class="enclose">
         <ul class="tab">
+          <li data-tab="general">General</li>
+          <li data-tab="data-audience">Data & Audience</li>
+          <li data-tab="pricing">Pricing</li>
+          <li data-tab="clients">Clients</li>
+        </ul>
+      </div>
+      <div class="outfaq">
+        <div class="faq"></div>
+        <img src="./Public/Audience.png" />
+        <div class="car"></div>
+      </div>
+      <!-- <div class="enclose">
+        <ul class="tab">
           <li>General</li>
           <li>Data & Audience</li>
           <li>Pricing</li>
@@ -372,9 +513,7 @@
             <p class="hiddenFaq">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
           </div>
         </div>
-        <img src="./Public/Audience.png" />
-        <div class="car"></div>
-      </div>
+      </div> -->
     </section>
     <section class="demo">
       <img src="./Public/Mask Group.png" class="dot" />
